@@ -16,10 +16,6 @@ public class EPIManager : MonoBehaviour
         selectedEPIIndex = 0;
     }
 
-    public void Update()
-    {
-        Debug.Log($"Current selected EPI index: {selectedEPIIndex}");
-    }
 
     public void RegisterEPISelected()
     {

@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Anchor
+  - Solvant
+  - Acide
+  - Basique
+  - DechetCritique
+  - AcidePotentiel
   layers:
   - Default
   - TransparentFX
