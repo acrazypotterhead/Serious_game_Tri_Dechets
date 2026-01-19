@@ -10,6 +10,7 @@ TagManager:
   - Basique
   - DechetCritique
   - AcidePotentiel
+  - NotAcid
   layers:
   - Default
   - TransparentFX
