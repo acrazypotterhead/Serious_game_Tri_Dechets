@@ -1,37 +1,47 @@
-using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
-public class IsolementButtonBehavior : MonoBehaviour
+namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 {
-    public TMP_Text instructions;
-    public float displayDuration = 4f;
-
-    private void OnTriggerEnter(Collider other)
+    /// <summary>
+    /// Add this component to a GameObject and call the <see cref="IncrementText"/> method
+    /// in response to a Unity Event to update a text display to count up with each event.
+    /// </summary>
+    public class IsolementButtonBehavior : MonoBehaviour
     {
-        if (!other.CompareTag("Player")) return;
+        [SerializeField]
+        [Tooltip("The Text component this behavior uses to display the incremented value.")]
+        public TMP_Text instructions; 
+        public float displayDuration = 4f;
 
-        instructions.gameObject.SetActive(true);
 
-        if (AnomalyManager.Instance.hasAnomaly)
+        protected void Awake()
         {
-            instructions.text = "Anomalie signalée";
-            instructions.color = new Color32(120, 61, 34, 255);
-            AnomalyManager.Instance.hasAnomaly = false;
-        }
-        else
-        {
-            instructions.text = "Aucune anomalie à signaler";
-            instructions.color = new Color32(180, 180, 180, 255);
-
+            if (instructions == null)
+                Debug.LogWarning("Missing required Text component reference. Use the Inspector window to assign which Text component to increment.", this);
         }
 
-        StartCoroutine(HideMessageAfterDelay());
-    }
+        public void MakeHappen() 
+        { 
+            
+            instructions.gameObject.SetActive(true); 
 
-    IEnumerator HideMessageAfterDelay()
-    {
-        yield return new WaitForSeconds(displayDuration);
-        instructions.gameObject.SetActive(false);
+            if (AnomalyManager.Instance.hasAnomaly) 
+            { 
+                instructions.text = "Anomalie signalée"; 
+                instructions.color = new Color32(255, 255, 255, 255);
+                AnomalyManager.Instance.hasAnomaly = false; 
+            } else { 
+                instructions.text = "Aucune anomalie à signaler"; 
+                instructions.color = new Color32(255, 255, 255, 255);
+            } 
+            StartCoroutine(HideMessageAfterDelay());
+        }
+        IEnumerator HideMessageAfterDelay() 
+        { 
+            yield return new WaitForSeconds(displayDuration); 
+            instructions.gameObject.SetActive(false); 
+        }
     }
 }
