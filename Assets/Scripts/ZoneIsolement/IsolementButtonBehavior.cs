@@ -27,17 +27,29 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             
             instructions.gameObject.SetActive(true); 
 
-            if (AnomalyManager.Instance.hasAnomaly) 
-            { 
-                instructions.text = "Anomalie signalée"; 
-                instructions.color = new Color32(255, 255, 255, 255);
-                AnomalyManager.Instance.hasAnomaly = false; 
-            } else { 
-                instructions.text = "Aucune anomalie à signaler"; 
-                instructions.color = new Color32(255, 255, 255, 255);
-            } 
+             if (!AnomalyManager.Instance.hasAnomaly)
+                {
+                    instructions.text = "Aucune anomalie à signaler";
+                    instructions.color = Color.white;
+                }
+                // Anomaly exists but leak not contained
+                else if (!AnomalyManager.Instance.leakContained && !AnomalyManager.Instance.hasAnomaly)
+                {
+                    instructions.text = "Contenir la fuite avant signalement";
+                    instructions.color = new Color32(255, 165, 0, 255);
+                }
+                // Anomaly exists AND leak is contained
+                else
+                {
+                    instructions.text = "Anomalie signalée";
+                    instructions.color = Color.white;
+
+                    AnomalyManager.Instance.ResetAnomaly();
+                }
             StartCoroutine(HideMessageAfterDelay());
         }
+
+
         IEnumerator HideMessageAfterDelay() 
         { 
             yield return new WaitForSeconds(displayDuration); 

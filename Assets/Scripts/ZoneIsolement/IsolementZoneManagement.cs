@@ -8,22 +8,24 @@ public class IsolementZoneManagement : MonoBehaviour
     public TMP_Text instructions;
     public float displayDuration = 4f;
 
-    void OnCollisionEnter(Collision collision)
+     private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "NotAcid")
+        if (other.gameObject.tag == "NotAcid")
         {
             instructions.gameObject.SetActive(true);
-            instructions.text = "Déchet Isolé.";
-            instructions.color = new Color32(120, 61, 34, 255);
+            instructions.text = "Déchet Isolé.\nSignalez l'anomalie.";
+            instructions.color = new Color32(255, 255, 255, 255);
+            AnomalyManager.Instance.hasAnomaly = true;
         }
 
-        if(collision.gameObject.tag == "LeakingWaste")
+        if(other.gameObject.tag == "LeakingWaste")
         {
+            
             instructions.gameObject.SetActive(true);
-            instructions.text = "Bidon Isolé.";
-             instructions.color = new Color32(120, 61, 34, 255);
+            instructions.text = "Bidon Isolé.\nSignalez l'anomalie.";
+            instructions.color = new Color32(255, 255, 255, 255);
+            AnomalyManager.Instance.leakContained = false;
         }
-        AnomalyManager.Instance.hasAnomaly = true;
         StartCoroutine(HideMessageAfterDelay());
     }
 

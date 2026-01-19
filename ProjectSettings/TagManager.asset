@@ -11,6 +11,7 @@ TagManager:
   - DechetCritique
   - AcidePotentiel
   - NotAcid
+  - LeakPuddle
   layers:
   - Default
   - TransparentFX
