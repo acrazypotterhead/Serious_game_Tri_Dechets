@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 
+
 public class IsolementZoneManagement : MonoBehaviour
 {
 
@@ -10,6 +11,27 @@ public class IsolementZoneManagement : MonoBehaviour
 
      private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste"))
+        {
+            Debug.Log("Wrong item isolated. ERROR");
+            return;
+        }
+
+        // make object NOT re-grabbable
+        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grab = other.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+        if (grab != null)
+        {
+            grab.enabled = false;
+        }
+         //  freeze physics so it stays in place
+        Rigidbody rb = other.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = true;
+            rb.linearVelocity = Vector3.zero;
+            rb.angularVelocity = Vector3.zero;
+        }
+
         if (other.gameObject.tag == "NotAcid")
         {
             instructions.gameObject.SetActive(true);
