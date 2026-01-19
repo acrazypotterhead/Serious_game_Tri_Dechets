@@ -11,12 +11,16 @@ public class VerificationPH : MonoBehaviour
             PotentialAcide acideComponent = collision.gameObject.GetComponent<PotentialAcide>();
             acideComponent.VerifiedAcide = true;
             // si c'est un acide on affiche la bandelette en couleur rouge
-            bandelette.GetComponent<Renderer>().material.color = Color.red;
+            if (acideComponent.catgegorybandelette == "red")
+            {
+                bandelette.GetComponent<Renderer>().material.color = Color.red;
+            }
+            else
+            {
+                bandelette.GetComponent<Renderer>().material.color = Color.green;
+            }
             Debug.Log("Acid verified for pH: " + collision.gameObject.name + " with bandelette category: " + acideComponent.catgegorybandelette);
         }
-        else
-        {
-            bandelette.GetComponent<Renderer>().material.color = Color.green;
-        }
+
     }
 }
