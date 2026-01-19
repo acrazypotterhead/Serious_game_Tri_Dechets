@@ -12,6 +12,7 @@ TagManager:
   - AcidePotentiel
   - NotAcid
   - LeakPuddle
+  - LeakingWaste
   layers:
   - Default
   - TransparentFX

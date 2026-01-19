@@ -46,6 +46,7 @@ public class IsolementZoneManagement : MonoBehaviour
             instructions.gameObject.SetActive(true);
             instructions.text = "Bidon Isolé.\nSignalez l'anomalie.";
             instructions.color = new Color32(255, 255, 255, 255);
+            AnomalyManager.Instance.hasAnomaly = true; 
             AnomalyManager.Instance.leakContained = false;
         }
         StartCoroutine(HideMessageAfterDelay());

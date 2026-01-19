@@ -22,32 +22,34 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 Debug.LogWarning("Missing required Text component reference. Use the Inspector window to assign which Text component to increment.", this);
         }
 
-        public void MakeHappen() 
-        { 
-            
-            instructions.gameObject.SetActive(true); 
+        public void MakeHappen()
+        {
+            instructions.gameObject.SetActive(true);
 
-             if (!AnomalyManager.Instance.hasAnomaly)
-                {
-                    instructions.text = "Aucune anomalie à signaler";
-                    instructions.color = Color.white;
-                }
-                // Anomaly exists but leak not contained
-                else if (!AnomalyManager.Instance.leakContained && !AnomalyManager.Instance.hasAnomaly)
-                {
-                    instructions.text = "Contenir la fuite avant signalement";
-                    instructions.color = new Color32(255, 165, 0, 255);
-                }
-                // Anomaly exists AND leak is contained
-                else
-                {
-                    instructions.text = "Anomalie signalée";
-                    instructions.color = Color.white;
+            // 1No anomaly at all
+            if (!AnomalyManager.Instance.hasAnomaly)
+            {
+                instructions.text = "Aucune anomalie à signaler";
+                instructions.color = Color.white;
+            }
+            // Anomaly exists AND it is a leak AND not contained
+            else if (!AnomalyManager.Instance.leakContained)
+            {
+                instructions.text = "Contenir la fuite avant signalement";
+                instructions.color = new Color32(255, 165, 0, 255);
+            }
+            // Anomaly exists AND (not a leak OR leak contained)
+            else
+            {
+                instructions.text = "Anomalie signalée";
+                instructions.color = Color.white;
+                FindObjectOfType<IncrementText>().Increment();
+                AnomalyManager.Instance.ResetAnomaly();
+            }
 
-                    AnomalyManager.Instance.ResetAnomaly();
-                }
             StartCoroutine(HideMessageAfterDelay());
         }
+
 
 
         IEnumerator HideMessageAfterDelay() 

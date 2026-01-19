@@ -1874,6 +1874,7 @@ GameObject:
   - component: {fileID: 568555625}
   - component: {fileID: 568555624}
   - component: {fileID: 568555623}
+  - component: {fileID: 568555629}
   m_Layer: 0
   m_Name: "D\xE9chets critiques"
   m_TagString: DechetCritique
@@ -2124,6 +2125,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &568555629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568555622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c8dbd960c1c48619ec06a28a9df59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leakProbability: 0.33
+  leakPuddlePrefab: {fileID: 6937304969539075851, guid: a0332ff0d881e4ce29006d5174627841, type: 3}
+  puddleOffset: {x: 0, y: -0.07, z: 0}
 --- !u!4 &572922315 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -2836,6 +2852,7 @@ GameObject:
   - component: {fileID: 742245013}
   - component: {fileID: 742245012}
   - component: {fileID: 742245018}
+  - component: {fileID: 742245019}
   m_Layer: 0
   m_Name: Solvants
   m_TagString: Solvant
@@ -3126,6 +3143,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   epiManager: {fileID: 2077826466}
   infoText: {fileID: 668901836}
+--- !u!114 &742245019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742245011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c8dbd960c1c48619ec06a28a9df59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leakProbability: 0.33
+  leakPuddlePrefab: {fileID: 6937304969539075851, guid: a0332ff0d881e4ce29006d5174627841, type: 3}
+  puddleOffset: {x: 0, y: -0.07, z: 0}
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -4864,80 +4896,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.00087640056, y: 0.0025194888, z: 0.0006204176}
   m_Center: {x: -0.0000017882556, y: 0.0001718957, z: -0.000028018852}
---- !u!1001 &1244366718
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.5472304
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.000000059604645
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.318196
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -5568371526223589888, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_TagString
-      value: LeakPuddle
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_Name
-      value: PuddleModel
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: m_TagString
-      value: LeakPuddle
-      objectReference: {fileID: 0}
-    - target: {fileID: 7202271454713460447, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2100000, guid: b96a213d8d0d44588838f2ed40955370, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 65702495048144492, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-    - {fileID: -8700617353114198275, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: -5568371526223589888, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1391629820}
-  m_SourcePrefab: {fileID: 100100000, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
 --- !u!1 &1249617917
 GameObject:
   m_ObjectHideFlags: 0
@@ -5381,33 +5339,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1359575427}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1391629816 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -5568371526223589888, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
-  m_PrefabInstance: {fileID: 1244366718}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1391629820
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1391629816}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2534964839176971238, guid: 8cd12b7cc0b854ba29725bf1e8f3b4ed, type: 3}
 --- !u!1 &1399489259
 GameObject:
   m_ObjectHideFlags: 0
@@ -7022,6 +6953,7 @@ GameObject:
   - component: {fileID: 1982152544}
   - component: {fileID: 1982152543}
   - component: {fileID: 1982152549}
+  - component: {fileID: 1982152550}
   m_Layer: 0
   m_Name: Acides
   m_TagString: Acide
@@ -7312,6 +7244,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   epiManager: {fileID: 2077826466}
   infoText: {fileID: 668901836}
+--- !u!114 &1982152550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982152542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c8dbd960c1c48619ec06a28a9df59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leakProbability: 0.33
+  leakPuddlePrefab: {fileID: 6937304969539075851, guid: a0332ff0d881e4ce29006d5174627841, type: 3}
+  puddleOffset: {x: 0, y: -0.07, z: 0}
 --- !u!1 &1992539160
 GameObject:
   m_ObjectHideFlags: 0
@@ -7434,6 +7381,7 @@ GameObject:
   - component: {fileID: 2043696775}
   - component: {fileID: 2043696774}
   - component: {fileID: 2043696773}
+  - component: {fileID: 2043696779}
   m_Layer: 0
   m_Name: Basiques
   m_TagString: Basique
@@ -7684,6 +7632,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2043696779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043696772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82c8dbd960c1c48619ec06a28a9df59d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leakProbability: 0.33
+  leakPuddlePrefab: {fileID: 6937304969539075851, guid: a0332ff0d881e4ce29006d5174627841, type: 3}
+  puddleOffset: {x: 0, y: -0.07, z: 0}
 --- !u!1001 &2044963417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8228,5 +8191,4 @@ SceneRoots:
   - {fileID: 1719889449}
   - {fileID: 1883193671}
   - {fileID: 588052873}
-  - {fileID: 1244366718}
   - {fileID: 709724188}
