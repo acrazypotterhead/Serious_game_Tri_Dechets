@@ -3455,6 +3455,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blouse (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3616e7c3f0eeb364e8a80b50172f1fbb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3468,6 +3472,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3616e7c3f0eeb364e8a80b50172f1fbb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1146416755}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3616e7c3f0eeb364e8a80b50172f1fbb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1146416761}
   m_SourcePrefab: {fileID: 100100000, guid: 3616e7c3f0eeb364e8a80b50172f1fbb, type: 3}
 --- !u!1 &1146416754 stripped
 GameObject:
@@ -3522,7 +3529,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 386890354}
+      - m_Target: {fileID: 1146416761}
         m_TargetAssemblyTypeName: SelectEPI, Assembly-CSharp
         m_MethodName: EPIselected
         m_Mode: 1
@@ -3661,6 +3668,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 11.742387, y: 2.8085911, z: 9.638135}
   m_Center: {x: 0.0028138177, y: 0.033323277, z: 11.828779}
+--- !u!114 &1146416761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146416754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eba38d23c5b73346beab54a39413c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1203292792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4703,7 +4722,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 386890354}
+      - m_Target: {fileID: 1479253176}
         m_TargetAssemblyTypeName: SelectEPI, Assembly-CSharp
         m_MethodName: EPIselected
         m_Mode: 1
@@ -5334,6 +5353,63 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709407151}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1719889449
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_Name
+      value: XR Device Simulator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
 --- !u!1 &1736019989
 GameObject:
   m_ObjectHideFlags: 0
@@ -6837,3 +6913,4 @@ SceneRoots:
   - {fileID: 1479253174}
   - {fileID: 1146416753}
   - {fileID: 1060637632}
+  - {fileID: 1719889449}
