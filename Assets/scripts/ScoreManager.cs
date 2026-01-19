@@ -12,12 +12,14 @@ public class ScoreManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        Debug.Log("ScoreManager READY");
     }
 
     public void RegisterSuccess()
     {
         correctSorts++;
         environmentScore += 2;
+        Debug.Log("Succès de tri enregistré");
     }
 
     public void RegisterError(string reason)
@@ -30,7 +32,15 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        
+
+    }
+    void ShowDebugScores()
+    {
+        Debug.Log("---- SCORES ----");
+        Debug.Log("Tri correct : " + correctSorts);
+        Debug.Log("Erreurs : " + errors);
+        Debug.Log("Sécurité : " + securityScore);
+        Debug.Log("Environnement : " + environmentScore);
     }
 
     // Update is called once per frame
