@@ -5,7 +5,7 @@ public class EPIManager : MonoBehaviour
 {
     public static EPIManager Instance { get; private set; }
 
-    private int selectedEPIIndex = 0;
+    public int selectedEPIIndex = 0;
     public TMP_Text epiText;
 
     private void Awake()

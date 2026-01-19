@@ -2400,6 +2400,7 @@ GameObject:
   - component: {fileID: 742245014}
   - component: {fileID: 742245013}
   - component: {fileID: 742245012}
+  - component: {fileID: 742245018}
   m_Layer: 0
   m_Name: Solvants
   m_TagString: Solvant
@@ -2454,10 +2455,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742245018}
+        m_TargetAssemblyTypeName: InteractionsBeforeEPis, Assembly-CSharp
+        m_MethodName: Interacting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742245018}
+        m_TargetAssemblyTypeName: InteractionsBeforeEPis, Assembly-CSharp
+        m_MethodName: NotHolding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2652,6 +2677,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &742245018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742245011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ba9271aaf7d1144b1aa648dc7eaf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  epiManager: {fileID: 2077826466}
+  infoText: {fileID: 668901836}
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -6053,6 +6092,7 @@ GameObject:
   - component: {fileID: 1982152545}
   - component: {fileID: 1982152544}
   - component: {fileID: 1982152543}
+  - component: {fileID: 1982152549}
   m_Layer: 0
   m_Name: Acides
   m_TagString: Acide
@@ -6107,10 +6147,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1982152549}
+        m_TargetAssemblyTypeName: InteractionsBeforeEPis, Assembly-CSharp
+        m_MethodName: Interacting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1982152549}
+        m_TargetAssemblyTypeName: InteractionsBeforeEPis, Assembly-CSharp
+        m_MethodName: NotHolding
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -6305,6 +6369,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1982152549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982152542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ba9271aaf7d1144b1aa648dc7eaf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  epiManager: {fileID: 2077826466}
+  infoText: {fileID: 668901836}
 --- !u!1 &1992539160
 GameObject:
   m_ObjectHideFlags: 0
@@ -6903,6 +6981,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2077826467}
   - component: {fileID: 2077826466}
+  - component: {fileID: 2077826468}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -6922,6 +7001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fead132ee48df844a418c3fdb92a2b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedEPIIndex: 0
   epiText: {fileID: 668901836}
 --- !u!4 &2077826467
 Transform:
@@ -6938,6 +7018,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2077826468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077826464}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ba9271aaf7d1144b1aa648dc7eaf2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  epiManager: {fileID: 2077826466}
+  infoText: {fileID: 668901836}
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
