@@ -9,7 +9,12 @@ public class IsolementZoneManagement : MonoBehaviour
     public TMP_Text instructions;
     public float displayDuration = 4f;
 
-     private void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        instructions.gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste"))
         {
