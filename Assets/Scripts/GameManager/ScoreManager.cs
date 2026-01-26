@@ -24,7 +24,7 @@ public class ScoreManager : MonoBehaviour
     {
         correctSorts++;
         environmentScore += 2;
-        correctScoreText.text = "Correct Sorts : " + correctSorts;
+        correctScoreText.text = "Correct : " + correctSorts;
         Debug.Log("Succ�s de tri enregistr�");
     }
 
