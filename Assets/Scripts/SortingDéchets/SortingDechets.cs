@@ -1,20 +1,30 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class SortingDechets : MonoBehaviour
 {
     public TMP_Text feedbackText;
     public ScoreManager scoreManager;
-    
+
+    private Coroutine hideRoutine;
 
     void OnCollisionEnter(Collision collision)
     {
         Color orange = new Color(1f, 0.5f, 0f); // RGB orange
-        // Petit helper pour éviter de répéter
+
+        // Helper
         void SetFeedback(string msg, Color color)
         {
             feedbackText.text = msg;
             feedbackText.color = color;
+
+            // Active le TMP
+            feedbackText.gameObject.SetActive(true);
+
+            // Reset le timer
+            if (hideRoutine != null) StopCoroutine(hideRoutine);
+            hideRoutine = StartCoroutine(HideAfterSeconds(3f));
         }
 
         if (collision.gameObject.CompareTag("AcidePotentiel"))
@@ -42,10 +52,8 @@ public class SortingDechets : MonoBehaviour
             }
             else
             {
-                // Informatif (jaune)
                 SetFeedback("The potential acid has not been verified yet.", orange);
                 ScoreManager.Instance.RegisterError("Unverified acid sorted.");
-
                 Debug.Log("The acid has not been verified yet: " + collision.gameObject.tag);
             }
         }
@@ -65,5 +73,12 @@ public class SortingDechets : MonoBehaviour
                 ScoreManager.Instance.RegisterError("Incorrectly sorted waste.");
             }
         }
+    }
+
+    private IEnumerator HideAfterSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        feedbackText.gameObject.SetActive(false);
+        hideRoutine = null;
     }
 }
