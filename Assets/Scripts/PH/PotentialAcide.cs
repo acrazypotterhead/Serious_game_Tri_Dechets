@@ -3,13 +3,11 @@ using UnityEngine;
 public class PotentialAcide : MonoBehaviour
 {
     public bool VerifiedAcide;
-    public string catgegorybandelette; // chose the category of the bandelette associated with this acid
+    public float categoryBandelette; // random entre 0 et 7
 
     void Start()
     {
         VerifiedAcide = false;
+        categoryBandelette = Random.Range(0f, 8f); // 0.0 inclus, 7.0 exclus
     }
-
-    
 }
-

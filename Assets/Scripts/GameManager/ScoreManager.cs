@@ -1,13 +1,18 @@
 using UnityEngine;
+using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
 
+
     public int correctSorts = 0;
     public int errors = 0;
     public float securityScore = 100f;
     public float environmentScore = 100f;
+
+    public TMP_Text correctScoreText;
+    public TMP_Text errorScoreText;
 
     private void Awake()
     {
@@ -19,7 +24,8 @@ public class ScoreManager : MonoBehaviour
     {
         correctSorts++;
         environmentScore += 2;
-        Debug.Log("Succès de tri enregistré");
+        correctScoreText.text = "Correct Sorts : " + correctSorts;
+        Debug.Log("Succï¿½s de tri enregistrï¿½");
     }
 
     public void RegisterError(string reason)
@@ -27,25 +33,9 @@ public class ScoreManager : MonoBehaviour
         errors++;
         securityScore -= 10;
         environmentScore -= 5;
-
+        errorScoreText.text = "Errors : " + errors;
         Debug.Log("Erreur :" + reason);
     }
-    void Start()
-    {
 
-    }
-    void ShowDebugScores()
-    {
-        Debug.Log("---- SCORES ----");
-        Debug.Log("Tri correct : " + correctSorts);
-        Debug.Log("Erreurs : " + errors);
-        Debug.Log("Sécurité : " + securityScore);
-        Debug.Log("Environnement : " + environmentScore);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

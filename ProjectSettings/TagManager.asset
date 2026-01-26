@@ -13,6 +13,7 @@ TagManager:
   - NotAcid
   - LeakPuddle
   - LeakingWaste
+  - Neutre
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class LeakOnGrab : MonoBehaviour
 {
     [Header("Leak Settings")]
     [Range(0f, 1f)]
-    [SerializeField] private float leakProbability = 0.33f; // 1 chance out of 3
+    [SerializeField] private float leakProbability = 0.3f;
 
     [SerializeField] private GameObject leakPuddlePrefab;
     [SerializeField] private Vector3 puddleOffset = new Vector3(0, -0.07f, 0);
@@ -60,6 +60,7 @@ public class LeakOnGrab : MonoBehaviour
                 transform.position + puddleOffset,
                 Quaternion.identity
             );
+            Debug.Log("Puddle spawned.");
         }
 
     }

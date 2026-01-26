@@ -8,9 +8,9 @@ public class AbsorbantBehavior : MonoBehaviour
     public TMP_Text instructions;
     public float displayDuration = 4f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (!other.CompareTag("LeakPuddle")) return;
+        if (!other.gameObject.CompareTag("LeakPuddle")) return;
 
         // Leak is treated
         AnomalyManager.Instance.leakContained = true;
