@@ -14,6 +14,9 @@ TagManager:
   - LeakPuddle
   - LeakingWaste
   - Neutre
+  - AcideNeutralisation
+  - BaseNeutralisation
+  - Neutralisation
   layers:
   - Default
   - TransparentFX

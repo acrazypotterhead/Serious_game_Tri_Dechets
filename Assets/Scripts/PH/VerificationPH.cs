@@ -1,19 +1,30 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class VerificationPH : MonoBehaviour
 {
     public GameObject bandelette;
+
+    [Header("Visual revert")]
     public float revertDelay = 5f;
+
+    [Header("Info UI (optional)")]
+    public TMP_Text infoText;
+    public float infoDuration = 3f;
+
+    [Header("Neutralisation thresholds")]
+    private float acidNeedsNeutralisationBelow = 2f; // pH < 2 => AcideNeutralisation
+    private float baseNeedsNeutralisationAbove = 12f; // pH > 12 => BaseNeutralisation
 
     private Renderer bandeletteRenderer;
     private Material originalMaterial;
     private Coroutine revertRoutine;
+    private Coroutine infoRoutine;
 
     void Awake()
     {
         bandeletteRenderer = bandelette.GetComponent<Renderer>();
-        // Important: sharedMaterial pour garder une référence au matériau d'origine (asset)
         originalMaterial = bandeletteRenderer.sharedMaterial;
     }
 
@@ -26,16 +37,28 @@ public class VerificationPH : MonoBehaviour
 
         acideComponent.VerifiedAcide = true;
 
-        // Choix couleur selon catégorie
+        float pH = acideComponent.categoryBandelette;
+
+        // Couleur + tag selon pH
         Color targetColor;
         string newTag;
 
-        if (acideComponent.categoryBandelette < 7f)
+        if (pH < 7f)
         {
             targetColor = Color.red;
-            newTag = "Acide";
+
+            // Acide à neutraliser ?
+            if (pH < acidNeedsNeutralisationBelow)
+            {
+                newTag = "AcideNeutralisation";
+                ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !");
+            }
+            else
+            {
+                newTag = "Acide";
+            }
         }
-        else if (acideComponent.categoryBandelette == 7f)
+        else if (Mathf.Approximately(pH, 7f))
         {
             targetColor = Color.green;
             newTag = "Neutre";
@@ -43,28 +66,55 @@ public class VerificationPH : MonoBehaviour
         else
         {
             targetColor = Color.blue;
-            newTag = "Basique";
+
+            // Base à neutraliser ?
+            if (pH > baseNeedsNeutralisationAbove)
+            {
+                newTag = "BaseNeutralisation";
+                ShowInfo("Cette base a besoin d’être neutralisée avant le tri !");
+            }
+            else
+            {
+                newTag = "Basique";
+            }
         }
 
-        // Appliquer couleur (material => instance, ne modifie pas l'asset)
+        // Appliquer couleur temporaire
         bandeletteRenderer.material.color = targetColor;
+
+        // Tag (attention: les tags doivent exister dans Unity > Tags & Layers)
         collision.gameObject.tag = newTag;
 
-        Debug.Log("Acid verified for pH: " + collision.gameObject.name +
-                  " with bandelette category: " + acideComponent.categoryBandelette);
+        Debug.Log($"pH vérifié: {collision.gameObject.name} | pH={pH} | tag={newTag}");
 
-        // Reset le timer de retour
+        // Reset timer de retour matériau d’origine
         if (revertRoutine != null) StopCoroutine(revertRoutine);
         revertRoutine = StartCoroutine(RevertAfterDelay(revertDelay));
+    }
+
+    private void ShowInfo(string message)
+    {
+        if (infoText == null) return;
+
+        infoText.gameObject.SetActive(true);
+        infoText.text = message;
+
+        if (infoRoutine != null) StopCoroutine(infoRoutine);
+        infoRoutine = StartCoroutine(HideInfoAfterDelay(infoDuration));
+    }
+
+    private IEnumerator HideInfoAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        infoText.text = "";
+        infoText.gameObject.SetActive(false);
+        infoRoutine = null;
     }
 
     private IEnumerator RevertAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        // Remet le matériau d’origine
         bandeletteRenderer.sharedMaterial = originalMaterial;
-
         revertRoutine = null;
     }
 }

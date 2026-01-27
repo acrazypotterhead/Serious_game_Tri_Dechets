@@ -8,6 +8,6 @@ public class PotentialAcide : MonoBehaviour
     void Start()
     {
         VerifiedAcide = false;
-        categoryBandelette = Random.Range(0f, 8f); // 0.0 inclus, 7.0 exclus
+        categoryBandelette = Random.Range(0f, 13f); // 0.0 inclus, 7.0 exclus
     }
 }
