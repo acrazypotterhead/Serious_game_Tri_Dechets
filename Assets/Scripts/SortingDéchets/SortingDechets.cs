@@ -14,23 +14,13 @@ public class SortingDechets : MonoBehaviour
     public AudioClip errorClip;
 
     public DechetsPooling dechetsPooling;
+   
+   
+   
     void OnCollisionEnter(Collision collision)
     {
         Color orange = new Color(1f, 0.5f, 0f); // RGB orange
 
-        // Helper
-        void SetFeedback(string msg, Color color)
-        {
-            feedbackText.text = msg;
-            feedbackText.color = color;
-
-            // Active le TMP
-            feedbackText.gameObject.SetActive(true);
-
-            // Reset le timer
-            if (hideRoutine != null) StopCoroutine(hideRoutine);
-            hideRoutine = StartCoroutine(HideAfterSeconds(3f));
-        }
 
         if (collision.gameObject.CompareTag("AcidePotentiel"))
         {
@@ -99,4 +89,19 @@ public class SortingDechets : MonoBehaviour
         feedbackText.gameObject.SetActive(false);
         hideRoutine = null;
     }
+
+    
+        // Helper
+        void SetFeedback(string msg, Color color)
+        {
+            feedbackText.text = msg;
+            feedbackText.color = color;
+
+            // Active le TMP
+            feedbackText.gameObject.SetActive(true);
+
+            // Reset le timer
+            if (hideRoutine != null) StopCoroutine(hideRoutine);
+            hideRoutine = StartCoroutine(HideAfterSeconds(3f));
+        }
 }

@@ -32,7 +32,7 @@ public class Neutralisation : MonoBehaviour
         }
         else
         {
-            if(pa.tag != "AcideNeutralisation" && pa.tag != "BaseNeutralisation"){
+            if(pa.tag != "Acide2Neutre" && pa.tag != "Base2Neutre"){
                 ShowInfo("L'élement n'a pas besoin d'être neutralisé.", Color.green);
             }
             else {
@@ -45,8 +45,8 @@ public class Neutralisation : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("AcideNeutralisation") ||
-            collision.gameObject.CompareTag("BaseNeutralisation"))
+        if (collision.gameObject.CompareTag("Acide2Neutre") ||
+            collision.gameObject.CompareTag("Base2Neutre"))
         {
             OnZone = false;
         }

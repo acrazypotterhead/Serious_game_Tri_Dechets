@@ -17,6 +17,8 @@ TagManager:
   - AcideNeutralisation
   - BaseNeutralisation
   - Neutralisation
+  - Acide2Neutre
+  - Base2Neutre
   layers:
   - Default
   - TransparentFX

@@ -42,10 +42,10 @@ public class IsNeutralised : MonoBehaviour
     {
 
 
-        bool thisIsBaseNeutralisation = gameObject.CompareTag("AcideNeutralisation");
-        bool thisIsAcideNeutralisation = gameObject.CompareTag("BaseNeutralisation");
+        bool Acide2Neutre = gameObject.CompareTag("Acide2Neutre");
+        bool Base2Neutre = gameObject.CompareTag("Base2Neutre");
 
-        if (!thisIsBaseNeutralisation && !thisIsAcideNeutralisation) return;
+        if (!Base2Neutre && !Acide2Neutre) return;
 
         bool otherIsAcid = collision.gameObject.CompareTag("AcideNeutralisation");
         bool otherIsBase = collision.gameObject.CompareTag("BaseNeutralisation");
@@ -53,7 +53,7 @@ public class IsNeutralised : MonoBehaviour
         if (!otherIsAcid && !otherIsBase) return;
 
         // Succès : acide + base
-        if ((thisIsBaseNeutralisation && otherIsBase) || (thisIsAcideNeutralisation && otherIsAcid))
+        if ((otherIsAcid && Acide2Neutre) || (Base2Neutre && otherIsBase))
         {
             gameObject.tag = "Neutre";
             collision.gameObject.tag = "Neutre";
@@ -61,10 +61,10 @@ public class IsNeutralised : MonoBehaviour
         }
         else
         {
-            if (thisIsBaseNeutralisation && otherIsAcid)
-                SetInfo("Impossible : un acide ne neutralise pas un autre acide.", Color.red);
-            else
+            if (Base2Neutre && otherIsBase)
                 SetInfo("Impossible : une base ne neutralise pas une autre base.", Color.red);
+            else
+                SetInfo("Impossible : un acide ne neutralise pas un autre acide.", Color.red);
         }
     }
 }

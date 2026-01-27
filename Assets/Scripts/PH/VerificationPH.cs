@@ -61,8 +61,8 @@ public class VerificationPH : MonoBehaviour
             if (pH < acidNeedsNeutralisationBelow)
             {
         
-                newTag = "AcideNeutralisation";
-                ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !");
+                newTag = "Acide2Neutre";
+                ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !", Color.red);
                 if (leftHaptic != null)
                     leftHaptic.Pulse(0.6f, 0.2f);
                 if (rightHaptic != null)
@@ -85,8 +85,8 @@ public class VerificationPH : MonoBehaviour
             // Base à neutraliser ?
             if (pH > baseNeedsNeutralisationAbove)
             {
-                newTag = "BaseNeutralisation";
-                ShowInfo("Cette base a besoin d’être neutralisée avant le tri !");
+                newTag = "Base2Neutre";
+                ShowInfo("Cette base a besoin d’être neutralisée avant le tri !", Color.red);
 
                 if (leftHaptic != null)
                     leftHaptic.Pulse(0.6f, 0.2f);
@@ -116,12 +116,13 @@ public class VerificationPH : MonoBehaviour
         revertRoutine = StartCoroutine(RevertAfterDelay(revertDelay));
     }
 
-    private void ShowInfo(string message)
+    private void ShowInfo(string message, Color color)
     {
         if (infoText == null) return;
 
         infoText.gameObject.SetActive(true);
         infoText.text = message;
+        infoText.color = color;
 
         if (infoRoutine != null) StopCoroutine(infoRoutine);
         infoRoutine = StartCoroutine(HideInfoAfterDelay(infoDuration));
