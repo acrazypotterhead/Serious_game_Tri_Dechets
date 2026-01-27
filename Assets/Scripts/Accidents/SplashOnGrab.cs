@@ -12,6 +12,7 @@ public class SplashOnGrab : MonoBehaviour
     [SerializeField] private GameObject splashEffectPrefab;
     [SerializeField] private Vector3 localOffset = Vector3.zero;
     public bool splashed = false;
+    public AudioSource audioSource;
 
     private XRGrabInteractable grab;
 
@@ -33,9 +34,12 @@ public class SplashOnGrab : MonoBehaviour
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
+        audioSource.Play();
         if (Random.value > splashProbability) return;
+
         StartSplash();
     }
+
 
     private void StartSplash()
     {

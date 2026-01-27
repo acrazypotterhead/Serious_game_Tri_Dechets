@@ -12,6 +12,7 @@ public class HasBeenSplashed : MonoBehaviour
     public float maxExposure = 100f;
     public bool continueExposure = false;
     private SplashOnGrab[] splashScripts;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -37,6 +38,9 @@ public class HasBeenSplashed : MonoBehaviour
             {
                 continueExposure = true;
             }
+        }
+        else {
+            audioSource.Stop();
         }
         if (continueExposure)
         {
