@@ -1,19 +1,17 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Inputs.Haptics;
+
+
 
 public class HapticFeedback : MonoBehaviour
 {
-    [Tooltip("GameObject that has the HapticImpulsePlayer component")]
-    public GameObject hapticObject;
+    public HapticImpulsePlayer hapticPlayer;
 
     public void Pulse(float amplitude, float duration)
     {
-        if (hapticObject == null) return;
+        if (hapticPlayer == null) return;
 
-        // Call HapticImpulsePlayer.SendHapticImpulse(float, float)
-        hapticObject.SendMessage(
-            "SendHapticImpulse",
-            new float[] { amplitude, duration },
-            SendMessageOptions.DontRequireReceiver
-        );
+        hapticPlayer.SendHapticImpulse(amplitude, duration);
     }
 }
