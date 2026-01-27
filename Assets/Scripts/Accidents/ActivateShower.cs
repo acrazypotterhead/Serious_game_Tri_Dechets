@@ -27,8 +27,8 @@ public class ActivateShower : MonoBehaviour
             hasBeenSplashed.continueExposure = false;
             splashSlider.gameObject.SetActive(false);
 
-            }
-            audioSource.Play();
+        }
+        audioSource.Play();
     }
 
     void OnTriggerExit(Collider other)
