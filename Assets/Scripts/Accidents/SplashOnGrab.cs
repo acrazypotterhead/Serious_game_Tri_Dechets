@@ -11,6 +11,7 @@ public class SplashOnGrab : MonoBehaviour
 
     [SerializeField] private GameObject splashEffectPrefab;
     [SerializeField] private Vector3 localOffset = Vector3.zero;
+    public bool splashed = false;
 
     private XRGrabInteractable grab;
 
@@ -41,7 +42,7 @@ public class SplashOnGrab : MonoBehaviour
 
     private void StartSplash()
     {
-
+        splashed = true;
 
         gameObject.tag = "SplashingWaste";
 
