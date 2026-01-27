@@ -9,11 +9,7 @@ public class EPIManager : MonoBehaviour
     public int selectedEPIIndex = 0;
     public int totalEPI = 3;
     public TMP_Text epiCounterText;
-    public TMP_Text epiText;
 
-    [Header("Audio")]
-    public AudioSource audioSource;
-    public AudioClip allEpiSelectedClip;
 
     private bool allEpiDone = false;
 
@@ -42,24 +38,11 @@ public class EPIManager : MonoBehaviour
 
         if (selectedEPIIndex >= totalEPI && !allEpiDone)
         {
+            LabExposureController.Instance.ResetExposure();
             allEpiDone = true;
-
-            Debug.Log("All EPIs have been selected!");
-
-            if (epiCounterText != null)
-                epiText.text = "ALL EPIs have been selected!";
-                StartCoroutine(HideMessageAfterDelay());
-
-            if (audioSource != null && allEpiSelectedClip != null)
-                audioSource.PlayOneShot(allEpiSelectedClip);
+            epiCounterText.gameObject.SetActive(false);
+        
         }
-    }
-
-    IEnumerator HideMessageAfterDelay() 
-    { 
-        yield return new WaitForSeconds(4f); 
-        epiCounterText.gameObject.SetActive(false);
-        epiText.gameObject.SetActive(false);
     }
 
     private void UpdateEpiText()
