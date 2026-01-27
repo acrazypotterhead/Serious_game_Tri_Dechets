@@ -29,6 +29,21 @@ public class LabExposureController : MonoBehaviour
 
     private bool exposureActive = false;
     private bool errorRegistered = false;
+    [Header("Mid Exposure Feedback")]
+    public AudioClip coughClip;
+    private bool coughPlayed = false;
+
+    private Coroutine exposureTextRoutine;
+
+    private IEnumerator HideExposureTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (exposureText != null)
+            exposureText.gameObject.SetActive(false);
+
+        exposureTextRoutine = null;
+    }
 
     private void Awake()
     {
@@ -53,6 +68,15 @@ public class LabExposureController : MonoBehaviour
         exposureLevel += exposureIncreasePerSecond * Time.deltaTime;
         exposureSlider.value = exposureLevel;
 
+        // Cough at 50% exposure (once)
+        if (!coughPlayed && exposureLevel >= maxExposure * 0.5f)
+        {
+            if (alarmSource != null && coughClip != null)
+                alarmSource.PlayOneShot(coughClip);
+
+            coughPlayed = true;
+        }
+
         if (exposureLevel >= maxExposure)
         {
             TriggerCriticalIncident();
@@ -67,8 +91,17 @@ public class LabExposureController : MonoBehaviour
         exposureActive = true;
         exposureSlider.gameObject.SetActive(true);
 
-        exposureText.text =  "No EPI detected : Chemical exposure in progress.";
-        exposureText.color = Color.red;
+        if (exposureText != null)
+        {
+            exposureText.gameObject.SetActive(true);
+            exposureText.text = "No EPI detected : Chemical exposure in progress.";
+            exposureText.color = Color.red;
+
+            if (exposureTextRoutine != null)
+                StopCoroutine(exposureTextRoutine);
+
+            exposureTextRoutine = StartCoroutine(HideExposureTextAfterDelay(3f));
+        }
 
         if (alarmSource != null && !alarmSource.isPlaying)
             alarmSource.Play();
@@ -95,6 +128,7 @@ public class LabExposureController : MonoBehaviour
     public void ResetExposure()
     {
         exposureActive = false;
+        coughPlayed = false;
         exposureLevel = 0f;
         exposureSlider.value = 0f;
         exposureSlider.gameObject.SetActive(false);
