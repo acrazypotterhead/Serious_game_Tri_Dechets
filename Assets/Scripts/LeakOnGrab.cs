@@ -15,6 +15,9 @@ public class LeakOnGrab : MonoBehaviour
     private XRGrabInteractable grab;
     private bool leakAlreadyChecked = false;
     private GameObject spawnedPuddle;
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip leakClip;
 
     private void Awake()
     {
@@ -45,7 +48,7 @@ public class LeakOnGrab : MonoBehaviour
 
     private void StartLeak()
     {
-        // Change tag
+        // change tag
         gameObject.tag = "LeakingWaste";
 
         // Register anomaly
@@ -55,6 +58,8 @@ public class LeakOnGrab : MonoBehaviour
         // Spawn puddle
         if (leakPuddlePrefab != null)
         {
+            if (audioSource && leakClip)
+                audioSource.PlayOneShot(leakClip);
             spawnedPuddle = Instantiate(
                 leakPuddlePrefab,
                 transform.position + puddleOffset,
