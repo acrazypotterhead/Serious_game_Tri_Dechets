@@ -3,7 +3,7 @@ using UnityEngine;
 public enum GameState
 {
     Menu,
-    Préparation,
+    PrÃ©paration,
     Jeu,
     Incident,
     Bilan
