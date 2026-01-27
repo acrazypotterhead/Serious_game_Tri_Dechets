@@ -21,6 +21,9 @@ public class VerificationPH : MonoBehaviour
     private Material originalMaterial;
     private Coroutine revertRoutine;
     private Coroutine infoRoutine;
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip dipClip;
 
     void Awake()
     {
@@ -30,14 +33,18 @@ public class VerificationPH : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+
         if (!collision.gameObject.CompareTag("AcidePotentiel")) return;
 
         PotentialAcide acideComponent = collision.gameObject.GetComponent<PotentialAcide>();
+        if (audioSource && dipClip)
+            audioSource.PlayOneShot(dipClip);
         if (acideComponent == null) return;
 
         acideComponent.VerifiedAcide = true;
 
         float pH = acideComponent.categoryBandelette;
+        
 
         // Couleur + tag selon pH
         Color targetColor;
@@ -50,6 +57,7 @@ public class VerificationPH : MonoBehaviour
             // Acide à neutraliser ?
             if (pH < acidNeedsNeutralisationBelow)
             {
+        
                 newTag = "AcideNeutralisation";
                 ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !");
             }
