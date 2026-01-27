@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -13,6 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     public TMP_Text correctScoreText;
     public TMP_Text errorScoreText;
+    public List<ErrorType> errorsMade = new List<ErrorType>();
 
     private void Awake()
     {
@@ -25,16 +27,28 @@ public class ScoreManager : MonoBehaviour
         correctSorts++;
         environmentScore += 2;
         correctScoreText.text = "Correct : " + correctSorts;
-        Debug.Log("Succ�s de tri enregistr�");
+        Debug.Log("Succès de tri enregistrés");
     }
 
-    public void RegisterError(string reason)
+    public void RegisterError(ErrorType errorType)
     {
         errors++;
-        securityScore -= 10;
-        environmentScore -= 5;
         errorScoreText.text = "Errors : " + errors;
-        Debug.Log("Erreur :" + reason);
+
+        if (!errorsMade.Contains(errorType))
+            errorsMade.Add(errorType);
+
+        Debug.Log("Erreur enregistrée : " + errorType);
+    }
+
+    public void RegisterEnvironmentError()
+    {
+        environmentScore -= 5;
+    }
+
+    public void RegisterSecurityError()
+    {
+        securityScore -= 5;
     }
 
 

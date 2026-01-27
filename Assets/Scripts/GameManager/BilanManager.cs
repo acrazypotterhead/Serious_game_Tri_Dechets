@@ -1,25 +1,113 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class BilanManager : MonoBehaviour
 {
-    public void ShowResults()
+    public static BilanManager Instance;
+
+    [Header("Panel & Canvas")]
+    public GameObject bilanPanel;
+    public GameObject gameCanvas;
+
+    [Header("Security")]
+    public Slider securitySlider;
+    public TMP_Text securityValueText;
+
+    [Header("Environment")]
+    public Slider environmentSlider;
+    public TMP_Text environmentValueText;
+
+    [Header("Other Infos")]
+    public TMP_Text correctText;
+    public TMP_Text errorText;
+    public TMP_Text attentionText;
+
+
+
+    private void Awake()
     {
-        Debug.Log("===== BILAN FINAL =====");
-
-        Debug.Log("Tri correct :" + ScoreManager.Instance.correctSorts);
-        Debug.Log("Erreurs :" + ScoreManager.Instance.errors);
-
-        Debug.Log("Score S�curit� (ODD 3) :" + ScoreManager.Instance.securityScore);
-        Debug.Log("Score Environnement (ODD 12) :" + ScoreManager.Instance.environmentScore);
+        Instance = this;
     }
-    void Start()
+
+    private void Start()
     {
+        bilanPanel.SetActive(false);
+
+        securitySlider.minValue = 0;
+        securitySlider.maxValue = 100;
+
+        environmentSlider.minValue = 0;
+        environmentSlider.maxValue = 100;
+    }
+
+    public void GameOver()
+    {
+        ShowResults();
+    }
+
+    private void ShowResults()
+    {
+        var score = ScoreManager.Instance;
+
+        gameCanvas.SetActive(false);
+        bilanPanel.SetActive(true);
         
+
+        // --- Security ---
+        securitySlider.value = score.securityScore;
+        securityValueText.text = score.securityScore.ToString("0");
+
+        // --- Environment ---
+        environmentSlider.value = score.environmentScore;
+        environmentValueText.text = score.environmentScore.ToString("0");
+
+        correctText.text = "Tri correct : " + score.correctSorts;
+        errorText.text = "Erreurs : " + score.errors;
+
+        GeneratePedagogicalFeedback(score);
     }
 
-    // Update is called once per frame
-    void Update()
+        private void GeneratePedagogicalFeedback(ScoreManager score)
     {
-        
+        attentionText.text = "";
+
+        if (score.errorsMade.Count == 0)
+        {
+            attentionText.text = "No majors errors have been made during this session..";
+            return;
+        }
+
+        foreach (var error in score.errorsMade)
+        {
+            switch (error)
+            {
+                case ErrorType.MissingEPI:
+                    attentionText.text +=
+                        "• Wear the EPI before entering work zone.\n";
+                    break;
+
+                case ErrorType.WrongSorting:
+                    attentionText.text +=
+                        "• Check the compatibility of the waste with the recycling bin.\n";
+                    break;
+
+                case ErrorType.UnverifiedAcid:
+                    attentionText.text +=
+                        "• Check the pH before making any sorting decisions.\n";
+                    break;
+
+                case ErrorType.AccidentNotTreated:
+                    attentionText.text +=
+                        "• If accident happens, manage them in priority as they could cause others.\n";
+                    break;
+
+                case ErrorType.WrongItemIsolated:
+                    attentionText.text +=
+                        "• Isolate only waste that presents an anomaly.\n";
+                    break;
+            }
+        }
     }
+
 }

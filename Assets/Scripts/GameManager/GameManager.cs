@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
         if (newState == GameState.Bilan)
         {
-            bilanManager.ShowResults();
+            bilanManager.GameOver();
         }
     }
 

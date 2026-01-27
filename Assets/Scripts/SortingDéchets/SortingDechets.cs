@@ -47,7 +47,7 @@ public class SortingDechets : MonoBehaviour
                     if (audioSource && errorClip)
                         audioSource.PlayOneShot(errorClip);
                     Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
-                    ScoreManager.Instance.RegisterError("Incorrectly sorted waste.");
+                    ScoreManager.Instance.RegisterError(ErrorType.WrongSorting);
                 }
             }
             else
@@ -55,7 +55,7 @@ public class SortingDechets : MonoBehaviour
                 SetFeedback("The potential acid has not been verified yet.", orange);
                 if (audioSource && errorClip)
                     audioSource.PlayOneShot(errorClip);
-                ScoreManager.Instance.RegisterError("Unverified acid sorted.");
+                ScoreManager.Instance.RegisterError(ErrorType.UnverifiedAcid);
                 Debug.Log("The acid has not been verified yet: " + collision.gameObject.tag);
             }
         }
@@ -78,7 +78,7 @@ public class SortingDechets : MonoBehaviour
                 if (audioSource && errorClip)
                     audioSource.PlayOneShot(errorClip);
                 Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
-                ScoreManager.Instance.RegisterError("Incorrectly sorted waste.");
+                ScoreManager.Instance.RegisterError(ErrorType.WrongSorting);
             }
         }
     }

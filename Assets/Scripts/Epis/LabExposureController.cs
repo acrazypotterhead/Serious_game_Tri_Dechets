@@ -12,6 +12,7 @@ public class LabExposureController : MonoBehaviour
     [Header("Dependencies")]
     public EPIManager epiManager;
     public ScoreManager scoreManager;
+    public BilanManager bilanManager;
 
     [Header("UI")]
     public Slider exposureSlider;
@@ -108,7 +109,7 @@ public class LabExposureController : MonoBehaviour
 
 
         errorRegistered = true;
-        scoreManager.RegisterError("Entered zone without EPI.");
+        ScoreManager.Instance.RegisterError(ErrorType.MissingEPI);
         
     }
 
@@ -173,15 +174,14 @@ public class LabExposureController : MonoBehaviour
         if (alarmSource != null)
             alarmSource.Stop();
 
-        Debug.Log("gameOver");
-
-        scoreManager.RegisterError("Incident critique : exposition prolongée");
 
         exposureSlider.gameObject.SetActive(false);
         exposureLevel = 0f;
         exposureSlider.value = 0f;
 
-        SceneManager.LoadScene("SceneWithAllInteraction");
+        ScoreManager.Instance.RegisterError(ErrorType.MissingEPI);
+        BilanManager.Instance.GameOver();
+    
     }
 
 }
