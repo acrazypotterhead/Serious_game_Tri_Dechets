@@ -281,6 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 732219650}
   scoreManager: {fileID: 2077826469}
+  audioSource: {fileID: 2077826470}
+  successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!65 &20847151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2385,6 +2388,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 732219650}
   scoreManager: {fileID: 2077826469}
+  audioSource: {fileID: 2077826470}
+  successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!65 &452981375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2582,6 +2588,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 0}
   scoreManager: {fileID: 0}
+  audioSource: {fileID: 2077826470}
+  successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!1 &484197632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6862,6 +6871,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 732219650}
   scoreManager: {fileID: 2077826469}
+  audioSource: {fileID: 2077826470}
+  successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!65 &1075532135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8778,6 +8790,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feedbackText: {fileID: 732219650}
   scoreManager: {fileID: 2077826469}
+  audioSource: {fileID: 2077826470}
+  successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!65 &1357885675
 BoxCollider:
   m_ObjectHideFlags: 0

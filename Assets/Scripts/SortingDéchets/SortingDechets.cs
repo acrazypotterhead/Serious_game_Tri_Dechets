@@ -8,6 +8,10 @@ public class SortingDechets : MonoBehaviour
     public ScoreManager scoreManager;
 
     private Coroutine hideRoutine;
+    [Header("Audio Feedback")]
+    public AudioSource audioSource;
+    public AudioClip successClip;
+    public AudioClip errorClip;
 
     void OnCollisionEnter(Collision collision)
     {
@@ -39,6 +43,8 @@ public class SortingDechets : MonoBehaviour
                 if (collision.gameObject.tag.Contains(gameObject.name))
                 {
                     SetFeedback("Correctly sorted waste!", Color.green);
+                    if (audioSource && successClip)
+                        audioSource.PlayOneShot(successClip);
                     Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
                     ScoreManager.Instance.RegisterSuccess();
                     Destroy(collision.gameObject);
@@ -46,6 +52,8 @@ public class SortingDechets : MonoBehaviour
                 else
                 {
                     SetFeedback("Incorrectly sorted waste!", Color.red);
+                    if (audioSource && errorClip)
+                        audioSource.PlayOneShot(errorClip);
                     Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
                     ScoreManager.Instance.RegisterError("Incorrectly sorted waste.");
                 }
@@ -53,6 +61,8 @@ public class SortingDechets : MonoBehaviour
             else
             {
                 SetFeedback("The potential acid has not been verified yet.", orange);
+                if (audioSource && errorClip)
+                    audioSource.PlayOneShot(errorClip);
                 ScoreManager.Instance.RegisterError("Unverified acid sorted.");
                 Debug.Log("The acid has not been verified yet: " + collision.gameObject.tag);
             }
@@ -62,6 +72,8 @@ public class SortingDechets : MonoBehaviour
             if (collision.gameObject.tag.Contains(gameObject.name))
             {
                 SetFeedback("Correctly sorted waste!", Color.green);
+                if (audioSource && successClip)
+                    audioSource.PlayOneShot(successClip);
                 Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
                 Destroy(collision.gameObject);
                 ScoreManager.Instance.RegisterSuccess();
@@ -69,6 +81,8 @@ public class SortingDechets : MonoBehaviour
             else
             {
                 SetFeedback("Incorrectly sorted waste!", Color.red);
+                if (audioSource && errorClip)
+                    audioSource.PlayOneShot(errorClip);
                 Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
                 ScoreManager.Instance.RegisterError("Incorrectly sorted waste.");
             }
