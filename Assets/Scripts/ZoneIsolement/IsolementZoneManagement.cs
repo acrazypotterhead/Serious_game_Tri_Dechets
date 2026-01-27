@@ -30,6 +30,8 @@ public class IsolementZoneManagement : MonoBehaviour
         if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste") && !other.CompareTag("SplashingWaste"))
         {
             ScoreManager.Instance.RegisterError(ErrorType.WrongItemIsolated);
+            ScoreManager.Instance.RegisterEnvironmentError(10);
+            
             //Destroy(other.gameObject);
             dechetsPooling.DespawnDechet(other.gameObject);
             if (audioSource && wrongClip)

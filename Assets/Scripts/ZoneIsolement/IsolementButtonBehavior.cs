@@ -26,6 +26,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         public HapticFeedback leftHaptic;   
 
         public DechetsPooling dechetsPooling;
+        
 
 
 

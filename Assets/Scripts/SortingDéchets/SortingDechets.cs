@@ -56,6 +56,7 @@ public class SortingDechets : MonoBehaviour
                 if (audioSource && errorClip)
                     audioSource.PlayOneShot(errorClip);
                 ScoreManager.Instance.RegisterError(ErrorType.UnverifiedAcid);
+                ScoreManager.Instance.RegisterEnvironmentError(10);
                 Debug.Log("The acid has not been verified yet: " + collision.gameObject.tag);
             }
         }

@@ -4,6 +4,5 @@ public enum ErrorType
         WrongSorting,
         UnverifiedAcid,
         AccidentNotTreated,
-        LeakNotHandled,
         WrongItemIsolated
     }
