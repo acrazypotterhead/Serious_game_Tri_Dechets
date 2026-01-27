@@ -7,6 +7,7 @@ public class ActivateShower : MonoBehaviour
     public bool isShowering = false;
     public HasBeenSplashed hasBeenSplashed;
     public Slider splashSlider;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -15,8 +16,8 @@ public class ActivateShower : MonoBehaviour
 
     }
 
-   void OnTriggerEnter(Collider other)
-   {
+    void OnTriggerEnter(Collider other)
+    {
 
         rainWater.SetActive(true);
         if (hasBeenSplashed != null)
@@ -26,8 +27,15 @@ public class ActivateShower : MonoBehaviour
             hasBeenSplashed.continueExposure = false;
             splashSlider.gameObject.SetActive(false);
 
-        }
-   }
+            }
+            audioSource.Play();
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (audioSource != null) audioSource.Stop();
+        if (rainWater != null) rainWater.SetActive(false);
+    }
 
     
 
