@@ -14,12 +14,16 @@ public class AnomalyManager : MonoBehaviour
     // this checks if the user has contained the leaking from the leaking container
      public bool leakContained = false;
 
-    [Header("Leak Penalty Settings")]
+    [Header("Splash State")]
+    public bool splashActive = false;
+     public bool splashContained = false;
+
+    [Header("Penalty Settings")]
     public float securityPenaltyInterval = 20f;
 
     private Coroutine leakPenaltyRoutine;
+    private Coroutine splashPenaltyRoutine;
 
-     public bool splashActive = false;
 
     private void Awake()
     {
@@ -35,6 +39,20 @@ public class AnomalyManager : MonoBehaviour
 
         if (leakPenaltyRoutine == null)
             leakPenaltyRoutine = StartCoroutine(LeakSecurityPenalty());
+    }
+
+    public void StartSplash()
+    {
+
+        if (splashActive) return;
+
+        splashActive = true;
+        splashContained = false;
+
+         if (leakPenaltyRoutine == null)
+            leakPenaltyRoutine = StartCoroutine(SplashSecurityPenalty());
+
+  
     }
 
     // usage of absorbant
@@ -54,6 +72,40 @@ public class AnomalyManager : MonoBehaviour
         Debug.Log("Leak contained");
     }
 
+    public void ContainSplash()
+    {
+        if (!splashActive) return;
+
+        splashContained = true;
+        splashActive = false;
+
+        if (splashPenaltyRoutine != null)
+        {
+            StopCoroutine(splashPenaltyRoutine);
+            splashPenaltyRoutine = null;
+        }
+
+    }
+
+    private IEnumerator SplashSecurityPenalty()
+    {
+        while (splashActive && !splashContained)
+        {
+            yield return new WaitForSeconds(securityPenaltyInterval);
+
+            instructions.gameObject.SetActive(true);
+            instructions.text = "You still haven't showered. Take care of it, it could be toxic.";
+            instructions.color = Color.red;
+
+            StartCoroutine(HideMessageAfterDelay());
+            ScoreManager.Instance.RegisterSecurityError(10);
+            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
+
+        }
+
+        splashPenaltyRoutine = null;
+    }
+
     private IEnumerator LeakSecurityPenalty()
     {
         while (leakActive && !leakContained)
@@ -68,7 +120,6 @@ public class AnomalyManager : MonoBehaviour
             ScoreManager.Instance.RegisterSecurityError(10);
             ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
 
-            Debug.Log("Security penalty applied: leak not handled");
         }
 
         leakPenaltyRoutine = null;
@@ -83,6 +134,7 @@ public class AnomalyManager : MonoBehaviour
     {
         hasAnomaly = false;
         leakContained = false;
+        splashContained = false;
         splashActive = false;
         leakActive = false;
 
@@ -90,6 +142,12 @@ public class AnomalyManager : MonoBehaviour
         {
             StopCoroutine(leakPenaltyRoutine);
             leakPenaltyRoutine = null;
+        }
+
+        if (splashPenaltyRoutine != null)
+        {
+            StopCoroutine(splashPenaltyRoutine);
+            splashPenaltyRoutine = null;
         }
     }
 }

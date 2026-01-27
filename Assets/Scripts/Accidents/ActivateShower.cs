@@ -21,6 +21,7 @@ public class ActivateShower : MonoBehaviour
         rainWater.SetActive(true);
         if (hasBeenSplashed != null)
         {
+            AnomalyManager.Instance.ContainLeak();
             hasBeenSplashed.ResetExposure();
             hasBeenSplashed.continueExposure = false;
             splashSlider.gameObject.SetActive(false);

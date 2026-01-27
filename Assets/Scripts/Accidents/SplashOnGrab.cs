@@ -34,21 +34,22 @@ public class SplashOnGrab : MonoBehaviour
     private void OnGrabbed(SelectEnterEventArgs args)
     {
         if (Random.value > splashProbability) return;
-        StartSplash();
+        TriggerSplash();
     }
 
-    private void StartSplash()
+    private void TriggerSplash()
     {
         splashed = true;
-
         gameObject.tag = "SplashingWaste";
 
-        AnomalyManager.Instance.splashActive = true;
-        if (splashEffectPrefab == null) return;
+        AnomalyManager.Instance.StartSplash();
 
         // ✅ instancie en enfant de l'objet grab
         GameObject splash = Instantiate(splashEffectPrefab, transform);
         splash.transform.localPosition = localOffset;
         splash.transform.localRotation = Quaternion.identity;
+
+        AnomalyManager.Instance.splashActive = true;
+        if (splashEffectPrefab == null) return;
     }
 }

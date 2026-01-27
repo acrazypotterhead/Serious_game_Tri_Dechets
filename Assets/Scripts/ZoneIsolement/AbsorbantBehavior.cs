@@ -26,7 +26,7 @@ public class AbsorbantBehavior : MonoBehaviour
         if (rightHaptic != null)
             rightHaptic.Pulse(0.6f, 0.3f);
             
-        AnomalyManager.Instance.leakContained = true;
+        AnomalyManager.Instance.ContainLeak();
         AnomalyManager.Instance.hasAnomaly = true;
 
         other.gameObject.SetActive(false);
