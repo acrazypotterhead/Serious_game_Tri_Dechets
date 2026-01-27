@@ -110,6 +110,7 @@ public class LabExposureController : MonoBehaviour
 
         errorRegistered = true;
         ScoreManager.Instance.RegisterError(ErrorType.MissingEPI);
+        ScoreManager.Instance.RegisterSecurityError(10);
         
     }
 
@@ -180,6 +181,7 @@ public class LabExposureController : MonoBehaviour
         exposureSlider.value = 0f;
 
         ScoreManager.Instance.RegisterError(ErrorType.MissingEPI);
+        ScoreManager.Instance.RegisterSecurityError(100);
         BilanManager.Instance.GameOver();
     
     }

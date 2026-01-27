@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using System.Collections;
 
 [DisallowMultipleComponent]
 public class LeakOnGrab : MonoBehaviour
@@ -43,30 +44,30 @@ public class LeakOnGrab : MonoBehaviour
         // Random chance
         if (Random.value > leakProbability) return;
 
-        StartLeak();
+        TriggerLeak();
     }
 
-    private void StartLeak()
+    private void TriggerLeak()
     {
-        // change tag
         gameObject.tag = "LeakingWaste";
 
-        // Register anomaly
-        //AnomalyManager.Instance.hasAnomaly = true;
-        AnomalyManager.Instance.leakContained = false;
+        AnomalyManager.Instance.StartLeak();
 
         // Spawn puddle
         if (leakPuddlePrefab != null)
         {
-            if (audioSource && leakClip)
-                audioSource.PlayOneShot(leakClip);
             spawnedPuddle = Instantiate(
                 leakPuddlePrefab,
                 transform.position + puddleOffset,
                 Quaternion.identity
             );
-            Debug.Log("Puddle spawned.");
+
+            Debug.Log("Leak puddle spawned");
         }
 
+        if (audioSource != null && leakClip != null)
+        {
+            audioSource.PlayOneShot(leakClip);
+        }
     }
 }
