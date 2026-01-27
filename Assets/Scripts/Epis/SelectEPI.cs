@@ -3,6 +3,7 @@ using UnityEngine;
 public class SelectEPI : MonoBehaviour
 {
     private bool _selected = false;
+    public AudioSource _audioSource;
 
     public void EPIselected()
     {
@@ -15,5 +16,7 @@ public class SelectEPI : MonoBehaviour
         Debug.Log($"EPI {gameObject.name} selected.");
 
         gameObject.SetActive(false);
+        if (_audioSource != null)
+            _audioSource.Play();
     }
 }
