@@ -13,6 +13,7 @@ public class SortingDechets : MonoBehaviour
     public AudioClip successClip;
     public AudioClip errorClip;
 
+    public DechetsPooling dechetsPooling;
     void OnCollisionEnter(Collision collision)
     {
         Color orange = new Color(1f, 0.5f, 0f); // RGB orange
@@ -45,9 +46,9 @@ public class SortingDechets : MonoBehaviour
                     SetFeedback("Correctly sorted waste!", Color.green);
                     if (audioSource && successClip)
                         audioSource.PlayOneShot(successClip);
-                    Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
+                    //Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
                     ScoreManager.Instance.RegisterSuccess();
-                    Destroy(collision.gameObject);
+                    dechetsPooling.DespawnDechet(collision.gameObject);
                 }
                 else
                 {
@@ -75,7 +76,8 @@ public class SortingDechets : MonoBehaviour
                 if (audioSource && successClip)
                     audioSource.PlayOneShot(successClip);
                 Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
+                dechetsPooling.DespawnDechet(collision.gameObject);
                 ScoreManager.Instance.RegisterSuccess();
             }
             else

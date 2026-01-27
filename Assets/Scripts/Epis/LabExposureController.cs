@@ -106,12 +106,10 @@ public class LabExposureController : MonoBehaviour
         if (alarmSource != null && !alarmSource.isPlaying)
             alarmSource.Play();
 
-        // Register ONE error only
-        if (!errorRegistered)
-        {
-            errorRegistered = true;
-            scoreManager.RegisterError("Entered zone without EPI.");
-        }
+
+        errorRegistered = true;
+        scoreManager.RegisterError("Entered zone without EPI.");
+        
     }
 
     public void PauseExposure()

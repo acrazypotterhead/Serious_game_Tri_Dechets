@@ -10,6 +10,8 @@ public class EPIManager : MonoBehaviour
     public int totalEPI = 3;
     public TMP_Text epiCounterText;
 
+    public DechetsPooling dechetsPooling;
+
 
     private bool allEpiDone = false;
 
@@ -41,6 +43,7 @@ public class EPIManager : MonoBehaviour
             LabExposureController.Instance.ResetExposure();
             allEpiDone = true;
             epiCounterText.gameObject.SetActive(false);
+            dechetsPooling.SpawnDechet();
         
         }
     }

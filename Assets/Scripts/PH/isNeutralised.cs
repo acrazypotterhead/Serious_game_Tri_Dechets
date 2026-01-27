@@ -9,7 +9,6 @@ public class IsNeutralised : MonoBehaviour
 
     private Color orange = new Color(1f, 0.5f, 0f);
     private Coroutine hideRoutine;
-    public PotentialAcide pa;
     
     private void Awake()
     {
