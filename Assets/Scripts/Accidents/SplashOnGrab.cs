@@ -18,19 +18,16 @@ public class SplashOnGrab : MonoBehaviour
     private void Awake()
     {
         grab = GetComponent<XRGrabInteractable>();
-        if (grab == null)
-            Debug.LogError($"[SplashOnGrab] XRGrabInteractable manquant sur {name}");
     }
 
     private void OnEnable()
     {
-        if (grab != null)
+
             grab.selectEntered.AddListener(OnGrabbed);
     }
 
     private void OnDisable()
     {
-        if (grab != null)
             grab.selectEntered.RemoveListener(OnGrabbed);
     }
 

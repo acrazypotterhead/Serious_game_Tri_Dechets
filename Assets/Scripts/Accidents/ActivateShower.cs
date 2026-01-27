@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ActivateShower : MonoBehaviour
 {
     public GameObject rainWater;
     public bool isShowering = false;
+    public HasBeenSplashed hasBeenSplashed;
+    public Slider splashSlider;
 
     void Start()
     {
@@ -16,7 +19,13 @@ public class ActivateShower : MonoBehaviour
    {
 
         rainWater.SetActive(true);
-       
+        if (hasBeenSplashed != null)
+        {
+            hasBeenSplashed.ResetExposure();
+            hasBeenSplashed.continueExposure = false;
+            splashSlider.gameObject.SetActive(false);
+
+        }
    }
 
     
