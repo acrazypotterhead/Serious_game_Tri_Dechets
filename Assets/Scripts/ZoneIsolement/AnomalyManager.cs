@@ -7,6 +7,7 @@ public class AnomalyManager : MonoBehaviour
     public bool hasAnomaly = false;
     // this checks if the user has contained the leaking from the leaking container
      public bool leakContained = false;
+     public bool splashActive = false;
 
     private void Awake()
     {
@@ -17,5 +18,6 @@ public class AnomalyManager : MonoBehaviour
     {
         hasAnomaly = false;
         leakContained = false;
+        splashActive = false;
     }
 }

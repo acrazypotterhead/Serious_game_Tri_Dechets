@@ -27,7 +27,7 @@ public class IsolementZoneManagement : MonoBehaviour
         if (other.CompareTag("Player"))
             return;
 
-        if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste"))
+        if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste") && !other.CompareTag("SplashingWaste"))
         {
             scoreManager.RegisterError("Wrong Item Isolated.");
             //Destroy(other.gameObject);
@@ -52,7 +52,7 @@ public class IsolementZoneManagement : MonoBehaviour
             dechetsPooling.DespawnDechet(other.gameObject);
         }
 
-        if(other.gameObject.tag == "LeakingWaste")
+        if(other.gameObject.tag == "LeakingWaste" || other.gameObject.tag == "SplashingWaste")
         {
             
             instructions.gameObject.SetActive(true);
@@ -62,6 +62,7 @@ public class IsolementZoneManagement : MonoBehaviour
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true; 
             AnomalyManager.Instance.leakContained = false;
+            AnomalyManager.Instance.splashActive = false;
             dechetsPooling.DespawnDechet(other.gameObject);
         }
         StartCoroutine(HideMessageAfterDelay());
