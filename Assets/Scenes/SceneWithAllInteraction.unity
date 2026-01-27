@@ -5873,6 +5873,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 732219650}
   displayDuration: 4
+  audioSource: {fileID: 880496337}
+  spongerubClip: {fileID: 8300000, guid: b23d011ea19344dadbe62684bf1831fb, type: 3}
+  rightHaptic: {fileID: 1138602003}
+  leftHaptic: {fileID: 1407454963}
 --- !u!114 &900248214
 MonoBehaviour:
   m_ObjectHideFlags: 0
