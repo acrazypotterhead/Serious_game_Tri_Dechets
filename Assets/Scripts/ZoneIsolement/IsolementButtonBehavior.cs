@@ -25,6 +25,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         public HapticFeedback rightHaptic;   
         public HapticFeedback leftHaptic;   
 
+        public DechetsPooling dechetsPooling;
+
 
 
         protected void Awake()
@@ -52,6 +54,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     rightHaptic.Pulse(0.3f, 0.2f);
                 
                 ScoreManager.Instance.RegisterSuccess();
+                dechetsPooling.SpawnDechet();
                 if (audioSource && validationClip)
                     audioSource.PlayOneShot(validationClip);
 

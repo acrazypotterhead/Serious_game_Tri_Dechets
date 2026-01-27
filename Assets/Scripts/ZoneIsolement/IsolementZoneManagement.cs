@@ -14,6 +14,7 @@ public class IsolementZoneManagement : MonoBehaviour
         public AudioClip wrongClip;
     [Header("Dependencies")]
         public ScoreManager scoreManager;
+        public DechetsPooling dechetsPooling;
 
     void Start()
     {
@@ -29,7 +30,8 @@ public class IsolementZoneManagement : MonoBehaviour
         if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste"))
         {
             scoreManager.RegisterError("Wrong Item Isolated.");
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
+            dechetsPooling.DespawnDechet(other.gameObject);
             if (audioSource && wrongClip)
                 audioSource.PlayOneShot(wrongClip);
             instructions.gameObject.SetActive(true);
@@ -47,7 +49,7 @@ public class IsolementZoneManagement : MonoBehaviour
             instructions.text = "Isolated Waste. Report the anomaly.";
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true;
-            Destroy(other.gameObject);
+            dechetsPooling.DespawnDechet(other.gameObject);
         }
 
         if(other.gameObject.tag == "LeakingWaste")
@@ -60,7 +62,7 @@ public class IsolementZoneManagement : MonoBehaviour
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true; 
             AnomalyManager.Instance.leakContained = false;
-            Destroy(other.gameObject);
+            dechetsPooling.DespawnDechet(other.gameObject);
         }
         StartCoroutine(HideMessageAfterDelay());
     }

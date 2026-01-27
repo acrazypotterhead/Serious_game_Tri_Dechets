@@ -49,6 +49,7 @@ public class SortingDechets : MonoBehaviour
                     //Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
                     ScoreManager.Instance.RegisterSuccess();
                     dechetsPooling.DespawnDechet(collision.gameObject);
+                    dechetsPooling.SpawnDechet();
                 }
                 else
                 {
@@ -78,6 +79,7 @@ public class SortingDechets : MonoBehaviour
                 Debug.Log("Correctly sorted waste: " + collision.gameObject.tag);
                 //Destroy(collision.gameObject);
                 dechetsPooling.DespawnDechet(collision.gameObject);
+                dechetsPooling.SpawnDechet();
                 ScoreManager.Instance.RegisterSuccess();
             }
             else

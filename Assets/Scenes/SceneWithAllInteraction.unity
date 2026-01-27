@@ -176,6 +176,7 @@ MonoBehaviour:
   audioSource: {fileID: 91481744}
   successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
   errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!65 &20847151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3061,6 +3062,7 @@ MonoBehaviour:
   audioSource: {fileID: 91481744}
   successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
   errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!65 &452981375
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3862,6 +3864,7 @@ MonoBehaviour:
   scoreManager: {fileID: 2077826469}
   rightHaptic: {fileID: 1138602003}
   leftHaptic: {fileID: 1407454963}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!114 &537928491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7335,6 +7338,7 @@ MonoBehaviour:
   validationClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
   wrongClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
   scoreManager: {fileID: 2077826469}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!65 &899036205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9084,6 +9088,7 @@ MonoBehaviour:
   audioSource: {fileID: 91481744}
   successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
   errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!65 &1075532135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11745,6 +11750,7 @@ MonoBehaviour:
   audioSource: {fileID: 91481744}
   successClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
   errorClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  dechetsPooling: {fileID: 2077826472}
 --- !u!65 &1357885675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16416,7 +16422,6 @@ GameObject:
   - component: {fileID: 1883193670}
   - component: {fileID: 1883193669}
   - component: {fileID: 1883193668}
-  - component: {fileID: 1883193672}
   m_Layer: 0
   m_Name: Poke Interactions Table
   m_TagString: Untagged
@@ -16514,26 +16519,6 @@ Transform:
   - {fileID: 2044963418}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 181.78, z: 0}
---- !u!114 &1883193672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883193667}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbd7fc9fecf3140e79bbc9df1c5e5752, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instructions: {fileID: 732219650}
-  displayDuration: 4
-  audioSource: {fileID: 0}
-  validationClip: {fileID: 0}
-  wrongClip: {fileID: 0}
-  scoreManager: {fileID: 0}
-  rightHaptic: {fileID: 0}
-  leftHaptic: {fileID: 0}
 --- !u!1 &1908422250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdea05d8be04350439a0a08f75277715, type: 3}
