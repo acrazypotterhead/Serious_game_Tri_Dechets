@@ -8,6 +8,12 @@ public class IsolementZoneManagement : MonoBehaviour
 
     public TMP_Text instructions;
     public float displayDuration = 4f;
+    [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip validationClip;
+        public AudioClip wrongClip;
+    [Header("Dependencies")]
+        public ScoreManager scoreManager;
 
     void Start()
     {
@@ -16,43 +22,45 @@ public class IsolementZoneManagement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
+        if (other.CompareTag("Player"))
+            return;
+
         if (!other.CompareTag("NotAcid") && !other.CompareTag("LeakingWaste"))
         {
-            Debug.Log("Wrong item isolated. ERROR");
+            scoreManager.RegisterError("Wrong Item Isolated.");
+            Destroy(other.gameObject);
+            if (audioSource && wrongClip)
+                audioSource.PlayOneShot(wrongClip);
+            instructions.gameObject.SetActive(true);
+            instructions.text = "Wrong Item Isolated.";
+            instructions.color = new Color32(255, 165, 0, 255);
+            StartCoroutine(HideMessageAfterDelay());
             return;
-        }
-
-        // make object NOT re-grabbable
-        UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grab = other.GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
-        if (grab != null)
-        {
-            grab.enabled = false;
-        }
-         //  freeze physics so it stays in place
-        Rigidbody rb = other.GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
-            rb.linearVelocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
         }
 
         if (other.gameObject.tag == "NotAcid")
         {
             instructions.gameObject.SetActive(true);
-            instructions.text = "Déchet Isolé.\nSignalez l'anomalie.";
+            if (audioSource && validationClip)
+                    audioSource.PlayOneShot(validationClip);
+            instructions.text = "Isolated Waste. Report the anomaly.";
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true;
+            Destroy(other.gameObject);
         }
 
         if(other.gameObject.tag == "LeakingWaste")
         {
             
             instructions.gameObject.SetActive(true);
-            instructions.text = "Bidon Isolé.\nSignalez l'anomalie.";
+            if (audioSource && validationClip)
+                    audioSource.PlayOneShot(validationClip);
+            instructions.text = "Isolated Can.\nReport the anomaly.";
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true; 
             AnomalyManager.Instance.leakContained = false;
+            Destroy(other.gameObject);
         }
         StartCoroutine(HideMessageAfterDelay());
     }

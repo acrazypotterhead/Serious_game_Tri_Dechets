@@ -14,6 +14,17 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [Tooltip("The Text component this behavior uses to display the incremented value.")]
         public TMP_Text instructions; 
         public float displayDuration = 4f;
+        [Header("Audio")]
+        public AudioSource audioSource;
+        public AudioClip validationClip;
+        public AudioClip wrongClip;
+
+        [Header("Dependencies")]
+        public ScoreManager scoreManager;
+        [Header("Haptics")]
+        public HapticFeedback rightHaptic;   
+        public HapticFeedback leftHaptic;   
+
 
 
         protected void Awake()
@@ -29,19 +40,21 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             // 1No anomaly at all
             if (!AnomalyManager.Instance.hasAnomaly)
             {
-                instructions.text = "Aucune anomalie à signaler";
+                instructions.text = "No Anomaly to report.";
                 instructions.color = Color.white;
             }
-            // Anomaly exists AND it is a leak AND not contained
-            else if (!AnomalyManager.Instance.leakContained)
-            {
-                instructions.text = "Contenir la fuite avant signalement";
-                instructions.color = new Color32(255, 165, 0, 255);
-            }
-            // Anomaly exists AND (not a leak OR leak contained)
             else
             {
-                instructions.text = "Anomalie signalée";
+                instructions.text = "Anomaly reported.";
+                if (leftHaptic != null)
+                    leftHaptic.Pulse(0.3f, 0.2f);
+                if (rightHaptic != null)
+                    rightHaptic.Pulse(0.3f, 0.2f);
+                
+                ScoreManager.Instance.RegisterSuccess();
+                if (audioSource && validationClip)
+                    audioSource.PlayOneShot(validationClip);
+
                 instructions.color = Color.white;
                 FindObjectOfType<IncrementText>().Increment();
                 AnomalyManager.Instance.ResetAnomaly();

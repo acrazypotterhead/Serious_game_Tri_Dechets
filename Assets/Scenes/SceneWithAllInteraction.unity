@@ -2956,6 +2956,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 732219650}
   displayDuration: 4
+  audioSource: {fileID: 91481744}
+  validationClip: {fileID: 8300000, guid: caeebd4fd17be480eb28c8b20b664369, type: 3}
+  wrongClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  scoreManager: {fileID: 2077826469}
+  rightHaptic: {fileID: 1138602003}
+  leftHaptic: {fileID: 1407454963}
 --- !u!114 &537928491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5759,6 +5765,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 732219650}
   displayDuration: 4
+  audioSource: {fileID: 91481744}
+  validationClip: {fileID: 8300000, guid: 2446c6bffdf11413b91473cb223a4010, type: 3}
+  wrongClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
+  scoreManager: {fileID: 2077826469}
 --- !u!65 &899036205
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13427,6 +13437,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   instructions: {fileID: 732219650}
   displayDuration: 4
+  audioSource: {fileID: 0}
+  validationClip: {fileID: 0}
+  wrongClip: {fileID: 0}
+  scoreManager: {fileID: 0}
+  rightHaptic: {fileID: 0}
+  leftHaptic: {fileID: 0}
 --- !u!1 &1908422250 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cdea05d8be04350439a0a08f75277715, type: 3}
