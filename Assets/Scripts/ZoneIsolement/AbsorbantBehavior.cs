@@ -31,7 +31,7 @@ public class AbsorbantBehavior : MonoBehaviour
 
         other.gameObject.SetActive(false);
         instructions.gameObject.SetActive(true);
-        instructions.text = "Situation resolved.\nReport the anomaly by l'anomalie.";
+        instructions.text = "Leak cleaned. If you haven't yet, report the anomaly.";
         instructions.color = new Color32(255, 255, 255, 255);
 
         StartCoroutine(HideMessageAfterDelay());
