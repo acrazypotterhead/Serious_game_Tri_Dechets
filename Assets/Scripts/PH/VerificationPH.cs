@@ -24,6 +24,9 @@ public class VerificationPH : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip dipClip;
+    [Header("Haptics")]
+    public HapticFeedback rightHaptic;   
+    public HapticFeedback leftHaptic;   
 
     void Awake()
     {
@@ -60,6 +63,10 @@ public class VerificationPH : MonoBehaviour
         
                 newTag = "AcideNeutralisation";
                 ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !");
+                if (leftHaptic != null)
+                    leftHaptic.Pulse(0.6f, 0.2f);
+                if (rightHaptic != null)
+                    rightHaptic.Pulse(0.6f, 0.2f);
             }
             else
             {
@@ -80,10 +87,19 @@ public class VerificationPH : MonoBehaviour
             {
                 newTag = "BaseNeutralisation";
                 ShowInfo("Cette base a besoin d’être neutralisée avant le tri !");
+
+                if (leftHaptic != null)
+                    leftHaptic.Pulse(0.6f, 0.2f);
+                if (rightHaptic != null)
+                    rightHaptic.Pulse(0.6f, 0.2f);
             }
             else
             {
                 newTag = "Basique";
+                if (leftHaptic != null)
+                    leftHaptic.Pulse(0.2f, 0.1f);
+                if (rightHaptic != null)
+                    rightHaptic.Pulse(0.2f, 0.1f);
             }
         }
 

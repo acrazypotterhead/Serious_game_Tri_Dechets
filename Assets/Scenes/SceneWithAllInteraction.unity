@@ -1213,7 +1213,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196559981}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba455762df0fb96418cbca79653695d2, type: 3}
   m_Name: 
@@ -1224,6 +1224,8 @@ MonoBehaviour:
   infoDuration: 3
   audioSource: {fileID: 196559987}
   dipClip: {fileID: 8300000, guid: 56e91df3df5c74f03bd51edff7ef4598, type: 3}
+  rightHaptic: {fileID: 0}
+  leftHaptic: {fileID: 0}
 --- !u!65 &196559983
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2327,6 +2329,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1767192433, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2008602635}
+    - targetCorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1407454963}
+    - targetCorrespondingSourceObject: {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1138602003}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
 --- !u!1 &452981372
 GameObject:
@@ -7364,6 +7372,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130375920}
   m_Mesh: {fileID: 6635630983033529267, guid: 513a41a0d25b92b4094cfe7f012b683a, type: 3}
+--- !u!1 &1138601998 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1138602003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138601998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061fadedb63874f1bafd862894663b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hapticObject: {fileID: 1138601998}
 --- !u!1 &1144177972
 GameObject:
   m_ObjectHideFlags: 0
@@ -8826,6 +8852,24 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357885672}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1407454958 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 441087506}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1407454963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1407454958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061fadedb63874f1bafd862894663b05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hapticObject: {fileID: 1407454958}
 --- !u!1 &1407722236
 GameObject:
   m_ObjectHideFlags: 0
@@ -10051,6 +10095,8 @@ MonoBehaviour:
   infoDuration: 3
   audioSource: {fileID: 196559987}
   dipClip: {fileID: 8300000, guid: 56e91df3df5c74f03bd51edff7ef4598, type: 3}
+  rightHaptic: {fileID: 1138602003}
+  leftHaptic: {fileID: 1407454963}
 --- !u!65 &1517638376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10362,7 +10408,7 @@ GameObject:
   - component: {fileID: 1531438251}
   - component: {fileID: 1531438250}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: Alarm Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14489,7 +14535,6 @@ GameObject:
   - component: {fileID: 2077826467}
   - component: {fileID: 2077826471}
   - component: {fileID: 2077826466}
-  - component: {fileID: 2077826468}
   - component: {fileID: 2077826469}
   - component: {fileID: 2077826470}
   m_Layer: 0
@@ -14529,22 +14574,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2077826468
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2077826464}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2ba9271aaf7d1144b1aa648dc7eaf2d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  epiManager: {fileID: 2077826466}
-  infoText: {fileID: 668901836}
-  audioSource: {fileID: 2077826470}
-  warningClip: {fileID: 8300000, guid: ee817debcd55b4addbf12d9b83774674, type: 3}
 --- !u!114 &2077826469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14682,6 +14711,7 @@ MonoBehaviour:
   alarmSource: {fileID: 1531438250}
   epiSelectedSource: {fileID: 2077826470}
   allEpiSelectedClip: {fileID: 8300000, guid: caeebd4fd17be480eb28c8b20b664369, type: 3}
+  coughClip: {fileID: 8300000, guid: 536f222c3fe124dd993508d77cb7566e, type: 3}
 --- !u!1 &2092139007
 GameObject:
   m_ObjectHideFlags: 0
