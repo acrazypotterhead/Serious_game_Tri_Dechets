@@ -93,7 +93,8 @@ public class ScoreManager : MonoBehaviour
 
     public void RegisterEnvironmentError(int loss)
     {
-
+        environmentScore -= loss;
+        environmentScore = Mathf.Clamp(environmentScore, 0f, 100f);
         Debug.Log("Environnement - " + loss);
         UpdateUI();
         CheckEndConditions();
