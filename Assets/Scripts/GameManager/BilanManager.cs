@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class BilanManager : MonoBehaviour
 {
@@ -42,6 +44,7 @@ public class BilanManager : MonoBehaviour
     public void GameOver()
     {
         ShowResults();
+        StartCoroutine(RestartAfterDelay(15f));
     }
 
     private void ShowResults()
@@ -111,6 +114,14 @@ public class BilanManager : MonoBehaviour
                     break;
             }
         }
+    }
+
+    private IEnumerator RestartAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Reload la scène actuelle
+        SceneManager.LoadScene(0);
     }
 
 }

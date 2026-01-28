@@ -150,10 +150,5 @@ public class ScoreManager : MonoBehaviour
 
     }
 
-    void Update()
-    {
-        Debug.Log(correctSorts + " correct sorts, " + errors + " errors. Security: " + securityScore + ", Environment: " + environmentScore);
-    }
-
 
 }
