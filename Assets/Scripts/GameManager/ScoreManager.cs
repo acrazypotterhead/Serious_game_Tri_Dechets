@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
     public float securityScore = 100f;
     public float environmentScore = 100f;
 
+    [Header("Game settings")]
+    public int correctToFinishDemo = 5;   // 30 pour le vrai jeu
+
     [Header("Texts")]
     public TMP_Text correctScoreText;
     public TMP_Text errorScoreText;
@@ -24,6 +27,8 @@ public class ScoreManager : MonoBehaviour
 
     [Header("Errors tracking")]
     public List<ErrorType> errorsMade = new List<ErrorType>();
+
+    private bool gameOverTriggered = false;
 
     private void Awake()
     {
@@ -75,6 +80,7 @@ public class ScoreManager : MonoBehaviour
 
         Debug.Log("Erreur enregistrée : " + errorType);
         UpdateUI();
+        CheckEndConditions();
     }
 
     public void RegisterSecurityError(int loss)
@@ -84,6 +90,7 @@ public class ScoreManager : MonoBehaviour
 
         Debug.Log("Sécurité - " + loss);
         UpdateUI();
+        CheckEndConditions();
     }
 
     public void RegisterEnvironmentError(int loss)
@@ -93,7 +100,40 @@ public class ScoreManager : MonoBehaviour
 
         Debug.Log("Environnement - " + loss);
         UpdateUI();
+        CheckEndConditions();
     }
+
+     /* =========================
+     *  FIN DE SESSION
+     * ========================= */
+    private void CheckEndConditions()
+    {
+        if (gameOverTriggered) return;
+
+        // jauge sécurité opérateur vide
+        if (securityScore <= 0f)
+        {
+            gameOverTriggered = true;
+            GameManager.Instance.ChangeState(GameState.Bilan);
+            return;
+        }
+
+        // jauge conformité environnement vide
+        if (environmentScore <= 0f)
+        {
+            gameOverTriggered = true;
+            GameManager.Instance.ChangeState(GameState.Bilan);
+            return;
+        }
+
+        // Fin de démo / mission réussie
+        if (correctSorts >= correctToFinishDemo)
+        {
+            gameOverTriggered = true;
+            GameManager.Instance.ChangeState(GameState.Bilan);
+        }
+    }
+
     /* =========================
      *  UI UPDATE
      * ========================= */
