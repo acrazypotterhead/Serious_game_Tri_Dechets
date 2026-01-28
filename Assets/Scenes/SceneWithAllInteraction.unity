@@ -9175,7 +9175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -12033,7 +12033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -12719,7 +12719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -13108,7 +13108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -18537,7 +18537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -19282,7 +19282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -20183,7 +20183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -25892,7 +25892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -26396,7 +26396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 0.33
+  splashProbability: 1
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0

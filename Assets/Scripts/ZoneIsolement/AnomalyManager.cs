@@ -118,27 +118,27 @@ public class AnomalyManager : MonoBehaviour
 
 
     private IEnumerator LeakSecurityPenalty()
-{
-    while (leakActive && !leakContained)
     {
-        yield return new WaitForSeconds(securityPenaltyInterval);
+        while (leakActive && !leakContained)
+        {
+            yield return new WaitForSeconds(securityPenaltyInterval);
 
-        if (!leakActive || leakContained)
-            continue;
+            if (!leakActive || leakContained)
+                continue;
 
-        ScoreManager.Instance.RegisterSecurityError(10);
-        ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
+            ScoreManager.Instance.RegisterSecurityError(10);
+            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
 
-        instructions.gameObject.SetActive(true);
-        instructions.text = "The leak is still active. Take care of it.";
-        instructions.color = Color.red;
+            instructions.gameObject.SetActive(true);
+            instructions.text = "The leak is still active. Take care of it.";
+            instructions.color = Color.red;
 
-        yield return new WaitForSeconds(4f);
-        instructions.gameObject.SetActive(false);
+            yield return new WaitForSeconds(4f);
+            instructions.gameObject.SetActive(false);
+        }
+
+        leakPenaltyRoutine = null;
     }
-
-    leakPenaltyRoutine = null;
-}
 
 
 

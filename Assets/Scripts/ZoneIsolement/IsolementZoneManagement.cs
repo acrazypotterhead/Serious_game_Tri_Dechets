@@ -66,7 +66,8 @@ public class IsolementZoneManagement : MonoBehaviour
             instructions.color = new Color32(255, 255, 255, 255);
             AnomalyManager.Instance.hasAnomaly = true; 
             AnomalyManager.Instance.leakContained = false;
-            AnomalyManager.Instance.splashActive = false;
+            //AnomalyManager.Instance.splashActive = false;
+            AnomalyManager.Instance.splashContained = false;
             dechetsPooling.DespawnDechet(other.gameObject);
         }
         StartCoroutine(HideMessageAfterDelay());
