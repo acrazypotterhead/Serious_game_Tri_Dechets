@@ -68,6 +68,7 @@ public class AnomalyManager : MonoBehaviour
             StopCoroutine(leakPenaltyRoutine);
             leakPenaltyRoutine = null;
         }
+        
 
         Debug.Log("Leak contained");
     }
@@ -148,19 +149,6 @@ public class AnomalyManager : MonoBehaviour
         hasAnomaly = false;
         leakContained = false;
         splashContained = false;
-        splashActive = false;
-        leakActive = false;
 
-        if (leakPenaltyRoutine != null)
-        {
-            StopCoroutine(leakPenaltyRoutine);
-            leakPenaltyRoutine = null;
-        }
-
-        if (splashPenaltyRoutine != null)
-        {
-            StopCoroutine(splashPenaltyRoutine);
-            splashPenaltyRoutine = null;
-        }
     }
 }
