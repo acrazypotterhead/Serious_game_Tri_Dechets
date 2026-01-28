@@ -88,59 +88,58 @@ public class AnomalyManager : MonoBehaviour
     }
 
     private IEnumerator SplashSecurityPenalty()
+{
+    while (splashActive && !splashContained)
     {
-        while (splashActive && !splashContained)
-        {
-            // 1️⃣ Wait BEFORE penalty
-            yield return new WaitForSeconds(securityPenaltyInterval);
+        // 1️⃣ Attente avant pénalité
+        yield return new WaitForSeconds(securityPenaltyInterval);
 
-            // If splash was fixed during the wait, stop
-            if (!splashActive || splashContained)
-                break;
+        // Si résolu pendant l’attente → on saute cette itération
+        if (!splashActive || splashContained)
+            continue;
 
-            // 2️⃣ Apply penalty
-            ScoreManager.Instance.RegisterSecurityError(10);
-            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
+        // 2️⃣ Pénalité
+        ScoreManager.Instance.RegisterSecurityError(10);
+        ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
 
-            // 3️⃣ Show warning
-            instructions.gameObject.SetActive(true);
-            instructions.text =
-                "You have been splashed with a chemical.\nClean yourself immediately.";
-            instructions.color = Color.red;
+        // 3️⃣ Message
+        instructions.gameObject.SetActive(true);
+        instructions.text =
+            "You have been splashed with a chemical.\nClean yourself immediately.";
+        instructions.color = Color.red;
 
-            // 4️⃣ Keep message visible for 4 seconds
-            yield return new WaitForSeconds(4f);
-
-            // 5️⃣ Hide warning (next 20s starts automatically)
-            instructions.gameObject.SetActive(false);
-        }
-
-        splashPenaltyRoutine = null;
+        // 4️⃣ Affichage 4s
+        yield return new WaitForSeconds(4f);
+        instructions.gameObject.SetActive(false);
     }
+
+    splashPenaltyRoutine = null;
+}
+
 
     private IEnumerator LeakSecurityPenalty()
+{
+    while (leakActive && !leakContained)
     {
-        while (leakActive && !leakContained)
-        {
-            yield return new WaitForSeconds(securityPenaltyInterval);
+        yield return new WaitForSeconds(securityPenaltyInterval);
 
-            if (!leakActive || leakContained)
-                break;
-            
-            ScoreManager.Instance.RegisterSecurityError(10);
-            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
-            // Show warning
-            instructions.gameObject.SetActive(true);
-            instructions.text = "The leak is still active. Take care of it.";
-            instructions.color = Color.red;
+        if (!leakActive || leakContained)
+            continue;
 
-            // Wait for display time
-            yield return new WaitForSeconds(4f);
-            instructions.gameObject.SetActive(false);
-        }
+        ScoreManager.Instance.RegisterSecurityError(10);
+        ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
 
-        leakPenaltyRoutine = null;
+        instructions.gameObject.SetActive(true);
+        instructions.text = "The leak is still active. Take care of it.";
+        instructions.color = Color.red;
+
+        yield return new WaitForSeconds(4f);
+        instructions.gameObject.SetActive(false);
     }
+
+    leakPenaltyRoutine = null;
+}
+
 
 
 
