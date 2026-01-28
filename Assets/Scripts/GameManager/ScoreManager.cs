@@ -93,7 +93,8 @@ public class ScoreManager : MonoBehaviour
 
     public void RegisterEnvironmentError(int loss)
     {
-
+        environmentScore -= loss;
+        environmentScore = Mathf.Clamp(environmentScore, 0f, 100f);
         Debug.Log("Environnement - " + loss);
         UpdateUI();
         CheckEndConditions();
@@ -147,11 +148,6 @@ public class ScoreManager : MonoBehaviour
             environmentSlider.value = environmentScore;
         
 
-    }
-
-    void Update()
-    {
-        Debug.Log(correctSorts + " correct sorts, " + errors + " errors. Security: " + securityScore + ", Environment: " + environmentScore);
     }
 
 
