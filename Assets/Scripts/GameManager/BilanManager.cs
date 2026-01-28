@@ -97,9 +97,14 @@ public class BilanManager : MonoBehaviour
                         "• Check the pH before making any sorting decisions.\n";
                     break;
 
+                case ErrorType.Neutralize:
+                    attentionText.text +=
+                        "• Liquids with extreme pH needs to be neutralized first.\n";
+                    break;
+
                 case ErrorType.AccidentNotTreated:
                     attentionText.text +=
-                        "• If accident happens, manage them in priority as they could cause others.\n";
+                        "• If accident happens, manage them in priority as they could cause others, or harm you.\n";
                     break;
 
                 case ErrorType.WrongItemIsolated:

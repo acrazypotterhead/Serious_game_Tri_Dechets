@@ -62,7 +62,7 @@ public class VerificationPH : MonoBehaviour
             {
         
                 newTag = "Acide2Neutre";
-                ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !", Color.red);
+                ShowInfo("Cet acide a besoin d’être neutralisé avant le tri !", Color.white);
                 if (leftHaptic != null)
                     leftHaptic.Pulse(0.6f, 0.2f);
                 if (rightHaptic != null)
@@ -86,7 +86,7 @@ public class VerificationPH : MonoBehaviour
             if (pH > baseNeedsNeutralisationAbove)
             {
                 newTag = "Base2Neutre";
-                ShowInfo("Cette base a besoin d’être neutralisée avant le tri !", Color.red);
+                ShowInfo("Cette base a besoin d’être neutralisée avant le tri !", Color.white);
 
                 if (leftHaptic != null)
                     leftHaptic.Pulse(0.6f, 0.2f);
