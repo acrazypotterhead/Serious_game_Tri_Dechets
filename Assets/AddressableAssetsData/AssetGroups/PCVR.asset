@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: PCVR
+  m_EditorClassIdentifier: 
+  m_GroupName: PCVR
+  m_GUID: f3979c476a7f8f04590f5a269b47f136
+  m_SerializeEntries:
+  - m_GUID: 383e6b7de12018743a97c513e58fa8c8
+    m_Address: Lab-PCVR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 96f67ebd438907f439cbcb90c6acdf5a
+    m_Address: chemset-PCVR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: aecc1377267f35945bc00172a7c61e98
+    m_Address: Socle-PCVR
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: aeeac54e7fa3020429a498ff694354e7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fb47505ce3ab9004aac76a4490791652, type: 2}
+    - {fileID: 11400000, guid: 66b5fd27e3f52984f93d8be6985247e5, type: 2}

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MQ
+  m_EditorClassIdentifier: 
+  m_GroupName: MQ
+  m_GUID: 8f8a476adcd93104db40be4cb14eff55
+  m_SerializeEntries:
+  - m_GUID: 25a56cbeba85216449fbfd54be8dd569
+    m_Address: Lab-MQ
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2ad6d6965a491014083501c9eed12fa8
+    m_Address: Socle-MQ
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 85dc3abd0e25e4a44879fc0201805094
+    m_Address: chemset-MQ
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: aeeac54e7fa3020429a498ff694354e7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: fbe2fdcc7f91155429a0fb14f3d31b37, type: 2}
+    - {fileID: 11400000, guid: 122d916e35154864893f71ec9fc89848, type: 2}
