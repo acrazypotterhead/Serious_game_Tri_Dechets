@@ -23,9 +23,6 @@ public class ActivateShower : MonoBehaviour
         if (hasBeenSplashed != null)
         {
             AnomalyManager.Instance.ContainLeak();
-            hasBeenSplashed.ResetExposure();
-            hasBeenSplashed.continueExposure = false;
-            splashSlider.gameObject.SetActive(false);
 
         }
         audioSource.Play();

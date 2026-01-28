@@ -34,13 +34,14 @@ public class SplashOnGrab : MonoBehaviour
 
     private void OnGrabbed(SelectEnterEventArgs args)
     {
-        audioSource.Play();
+
         if (Random.value > splashProbability) return;
         TriggerSplash();
     }
 
     private void TriggerSplash()
     {
+        audioSource.Play();
         splashed = true;
         gameObject.tag = "SplashingWaste";
 
