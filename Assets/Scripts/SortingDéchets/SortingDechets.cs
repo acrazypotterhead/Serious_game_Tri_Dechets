@@ -48,6 +48,7 @@ public class SortingDechets : MonoBehaviour
                         audioSource.PlayOneShot(errorClip);
                     Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
                     ScoreManager.Instance.RegisterError(ErrorType.WrongSorting);
+                    ScoreManager.Instance.RegisterEnvironmentError(10);
                 }
             }
             else
@@ -80,6 +81,7 @@ public class SortingDechets : MonoBehaviour
                     audioSource.PlayOneShot(errorClip);
                 Debug.Log("Incorrectly sorted waste: " + collision.gameObject.tag);
                 ScoreManager.Instance.RegisterError(ErrorType.WrongSorting);
+                ScoreManager.Instance.RegisterEnvironmentError(10);
             }
         }
     }
