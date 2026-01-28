@@ -13398,7 +13398,7 @@ Transform:
   m_LocalScale: {x: 6.452196, y: 0.04136304, z: 8.436779}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1242550650}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1031915541
 BoxCollider:
@@ -13506,7 +13506,7 @@ Transform:
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1513667499}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!65 &1037455286
 BoxCollider:
@@ -19748,7 +19748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22783,3 +22783,5 @@ SceneRoots:
   - {fileID: 33637137}
   - {fileID: 2058054489}
   - {fileID: 582964521}
+  - {fileID: 1031915540}
+  - {fileID: 1037455285}
