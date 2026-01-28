@@ -532,11 +532,11 @@ GameObject:
   - component: {fileID: 37130067}
   - component: {fileID: 37130074}
   - component: {fileID: 37130073}
-  - component: {fileID: 37130072}
   - component: {fileID: 37130071}
   - component: {fileID: 37130070}
   - component: {fileID: 37130069}
   - component: {fileID: 37130068}
+  - component: {fileID: 37130075}
   m_Layer: 0
   m_Name: AcidePotentiel (2)
   m_TagString: AcidePotentiel
@@ -741,29 +741,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &37130072
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 37130066}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &37130073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -817,6 +794,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37130066}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &37130075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37130066}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &37783445
 GameObject:
   m_ObjectHideFlags: 0
@@ -2198,6 +2196,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288611253}
   m_CullTransparentMesh: 1
+--- !u!1 &305730365 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d4a1149efd0a9e4b90fd54e692182c2, type: 3}
+  m_PrefabInstance: {fileID: 1797685599}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311848127
 GameObject:
   m_ObjectHideFlags: 0
@@ -7757,7 +7760,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 1.018
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8350,11 +8353,11 @@ GameObject:
   - component: {fileID: 499290141}
   - component: {fileID: 499290148}
   - component: {fileID: 499290147}
-  - component: {fileID: 499290146}
   - component: {fileID: 499290145}
   - component: {fileID: 499290144}
   - component: {fileID: 499290143}
   - component: {fileID: 499290142}
+  - component: {fileID: 499290149}
   m_Layer: 0
   m_Name: AcidePotentiel (3)
   m_TagString: AcidePotentiel
@@ -8559,29 +8562,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &499290146
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499290140}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &499290147
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8635,6 +8615,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 499290140}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &499290149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499290140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &520507600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9891,7 +9892,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: environmental compliance
+  m_text: Environmental Compliance
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10291,12 +10292,12 @@ GameObject:
   - component: {fileID: 742245017}
   - component: {fileID: 742245016}
   - component: {fileID: 742245015}
-  - component: {fileID: 742245014}
   - component: {fileID: 742245013}
   - component: {fileID: 742245012}
   - component: {fileID: 742245019}
   - component: {fileID: 742245020}
   - component: {fileID: 742245021}
+  - component: {fileID: 742245022}
   m_Layer: 0
   m_Name: Solvants
   m_TagString: Solvant
@@ -10458,29 +10459,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &742245014
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 742245011}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &742245015
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10597,6 +10575,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &742245022
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742245011}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.00000047683716, y: 0, z: 0}
 --- !u!1 &756192406
 GameObject:
   m_ObjectHideFlags: 0
@@ -10891,12 +10890,12 @@ GameObject:
   - component: {fileID: 792417425}
   - component: {fileID: 792417432}
   - component: {fileID: 792417431}
-  - component: {fileID: 792417430}
   - component: {fileID: 792417429}
   - component: {fileID: 792417428}
   - component: {fileID: 792417427}
   - component: {fileID: 792417426}
   - component: {fileID: 792417433}
+  - component: {fileID: 792417434}
   m_Layer: 0
   m_Name: Acides (1)
   m_TagString: Acide
@@ -11104,29 +11103,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &792417430
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792417424}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &792417431
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11197,6 +11173,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &792417434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 792417424}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &803692701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11280,12 +11277,12 @@ GameObject:
   - component: {fileID: 804884700}
   - component: {fileID: 804884707}
   - component: {fileID: 804884706}
-  - component: {fileID: 804884705}
   - component: {fileID: 804884704}
   - component: {fileID: 804884703}
   - component: {fileID: 804884702}
   - component: {fileID: 804884701}
   - component: {fileID: 804884708}
+  - component: {fileID: 804884709}
   m_Layer: 0
   m_Name: Solvants (1)
   m_TagString: Solvant
@@ -11493,29 +11490,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &804884705
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804884699}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &804884706
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11586,6 +11560,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &804884709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804884699}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.00000047683716, y: 0, z: 0}
 --- !u!1001 &827641149
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12945,11 +12940,11 @@ GameObject:
   - component: {fileID: 1012284359}
   - component: {fileID: 1012284358}
   - component: {fileID: 1012284357}
-  - component: {fileID: 1012284356}
   - component: {fileID: 1012284355}
   - component: {fileID: 1012284354}
   - component: {fileID: 1012284360}
   - component: {fileID: 1012284361}
+  - component: {fileID: 1012284362}
   m_Layer: 0
   m_Name: AcidePotentiel
   m_TagString: AcidePotentiel
@@ -13111,29 +13106,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1012284356
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012284353}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1012284357
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13230,6 +13202,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   neutralisation: {fileID: 1523465142}
   infoText: {fileID: 732219650}
+--- !u!65 &1012284362
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012284353}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1027035657
 GameObject:
   m_ObjectHideFlags: 0
@@ -16330,12 +16323,12 @@ GameObject:
   - component: {fileID: 1309837622}
   - component: {fileID: 1309837629}
   - component: {fileID: 1309837628}
-  - component: {fileID: 1309837627}
   - component: {fileID: 1309837626}
   - component: {fileID: 1309837625}
   - component: {fileID: 1309837624}
   - component: {fileID: 1309837623}
   - component: {fileID: 1309837630}
+  - component: {fileID: 1309837631}
   m_Layer: 0
   m_Name: Acides (2)
   m_TagString: Acide
@@ -16543,29 +16536,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1309837627
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1309837621}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1309837628
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16636,6 +16606,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &1309837631
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309837621}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1330137773
 GameObject:
   m_ObjectHideFlags: 0
@@ -16971,12 +16962,12 @@ GameObject:
   - component: {fileID: 1403914816}
   - component: {fileID: 1403914823}
   - component: {fileID: 1403914822}
-  - component: {fileID: 1403914821}
   - component: {fileID: 1403914820}
   - component: {fileID: 1403914819}
   - component: {fileID: 1403914818}
   - component: {fileID: 1403914817}
   - component: {fileID: 1403914824}
+  - component: {fileID: 1403914825}
   m_Layer: 0
   m_Name: Solvants (2)
   m_TagString: Solvant
@@ -17184,29 +17175,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1403914821
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1403914815}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1403914822
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17277,6 +17245,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &1403914825
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403914815}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0.00000047683716, y: 0, z: 0}
 --- !u!1 &1407454958 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 202364687, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -17340,7 +17329,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 544.7, y: -180.8}
+  m_AnchoredPosition: {x: 437.7, y: -103}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1407722238
@@ -18379,11 +18368,11 @@ GameObject:
   - component: {fileID: 1536906896}
   - component: {fileID: 1536906903}
   - component: {fileID: 1536906902}
-  - component: {fileID: 1536906901}
   - component: {fileID: 1536906900}
   - component: {fileID: 1536906899}
   - component: {fileID: 1536906898}
   - component: {fileID: 1536906897}
+  - component: {fileID: 1536906904}
   m_Layer: 0
   m_Name: AcidePotentiel (1)
   m_TagString: AcidePotentiel
@@ -18588,29 +18577,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1536906901
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1536906895}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1536906902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18664,6 +18630,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536906895}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!65 &1536906904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536906895}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!1 &1557292321
 GameObject:
   m_ObjectHideFlags: 0
@@ -18879,6 +18866,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8d4a1149efd0a9e4b90fd54e692182c2, type: 3}
   m_PrefabInstance: {fileID: 1797685599}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1565464010
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305730365}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4.545157, y: 0.21955967, z: 0.30905655}
+  m_Center: {x: -0.50508136, y: 1.0100818, z: 0.087849244}
 --- !u!1 &1586147299
 GameObject:
   m_ObjectHideFlags: 0
@@ -20265,6 +20273,9 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 284731952}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 8d4a1149efd0a9e4b90fd54e692182c2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1565464010}
     - targetCorrespondingSourceObject: {fileID: 8950904548294460631, guid: 8d4a1149efd0a9e4b90fd54e692182c2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 495882130}
@@ -20792,12 +20803,12 @@ GameObject:
   - component: {fileID: 1982152548}
   - component: {fileID: 1982152547}
   - component: {fileID: 1982152546}
-  - component: {fileID: 1982152545}
   - component: {fileID: 1982152544}
   - component: {fileID: 1982152543}
   - component: {fileID: 1982152550}
   - component: {fileID: 1982152551}
   - component: {fileID: 1982152552}
+  - component: {fileID: 1982152553}
   m_Layer: 0
   m_Name: Acides
   m_TagString: Acide
@@ -20959,29 +20970,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &1982152545
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1982152542}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1982152546
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21098,6 +21086,27 @@ MonoBehaviour:
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
   audioSource: {fileID: 2081637988}
+--- !u!65 &1982152553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982152542}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!20 &2008602630 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
