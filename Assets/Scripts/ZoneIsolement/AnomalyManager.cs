@@ -49,8 +49,8 @@ public class AnomalyManager : MonoBehaviour
         splashActive = true;
         splashContained = false;
 
-         if (leakPenaltyRoutine == null)
-            leakPenaltyRoutine = StartCoroutine(SplashSecurityPenalty());
+         if (splashPenaltyRoutine == null)
+            splashPenaltyRoutine = StartCoroutine(SplashSecurityPenalty());
 
   
     }
@@ -91,16 +91,28 @@ public class AnomalyManager : MonoBehaviour
     {
         while (splashActive && !splashContained)
         {
+            // 1️⃣ Wait BEFORE penalty
             yield return new WaitForSeconds(securityPenaltyInterval);
 
-            instructions.gameObject.SetActive(true);
-            instructions.text = "You still haven't showered. Take care of it, it could be toxic.";
-            instructions.color = Color.red;
+            // If splash was fixed during the wait, stop
+            if (!splashActive || splashContained)
+                break;
 
-            StartCoroutine(HideMessageAfterDelay());
+            // 2️⃣ Apply penalty
             ScoreManager.Instance.RegisterSecurityError(10);
             ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
 
+            // 3️⃣ Show warning
+            instructions.gameObject.SetActive(true);
+            instructions.text =
+                "You have been splashed with a chemical.\nClean yourself immediately.";
+            instructions.color = Color.red;
+
+            // 4️⃣ Keep message visible for 4 seconds
+            yield return new WaitForSeconds(4f);
+
+            // 5️⃣ Hide warning (next 20s starts automatically)
+            instructions.gameObject.SetActive(false);
         }
 
         splashPenaltyRoutine = null;
@@ -112,23 +124,25 @@ public class AnomalyManager : MonoBehaviour
         {
             yield return new WaitForSeconds(securityPenaltyInterval);
 
+            if (!leakActive || leakContained)
+                break;
+            
+            ScoreManager.Instance.RegisterSecurityError(10);
+            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
+            // Show warning
             instructions.gameObject.SetActive(true);
             instructions.text = "The leak is still active. Take care of it.";
             instructions.color = Color.red;
 
-            StartCoroutine(HideMessageAfterDelay());
-            ScoreManager.Instance.RegisterSecurityError(10);
-            ScoreManager.Instance.RegisterError(ErrorType.AccidentNotTreated);
-
+            // Wait for display time
+            yield return new WaitForSeconds(4f);
+            instructions.gameObject.SetActive(false);
         }
 
         leakPenaltyRoutine = null;
     }
-     IEnumerator HideMessageAfterDelay() 
-        { 
-            yield return new WaitForSeconds(3f); 
-            instructions.gameObject.SetActive(false); 
-        }
+
+
 
     public void ResetAnomaly()
     {

@@ -6,7 +6,6 @@ public class ActivateShower : MonoBehaviour
     public GameObject rainWater;
     public bool isShowering = false;
     public HasBeenSplashed hasBeenSplashed;
-    public Slider splashSlider;
     public AudioSource audioSource;
 
     void Start()
@@ -22,7 +21,7 @@ public class ActivateShower : MonoBehaviour
         rainWater.SetActive(true);
         if (hasBeenSplashed != null)
         {
-            AnomalyManager.Instance.ContainLeak();
+            AnomalyManager.Instance.ContainSplash();
 
         }
         audioSource.Play();
