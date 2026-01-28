@@ -23,8 +23,6 @@ public class BilanManager : MonoBehaviour
     public TMP_Text errorText;
     public TMP_Text attentionText;
 
-
-
     private void Awake()
     {
         Instance = this;

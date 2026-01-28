@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour
     public float environmentScore = 100f;
 
     [Header("Game settings")]
-    public int correctToFinishDemo = 5;   // 30 pour le vrai jeu
+    public int correctToFinishDemo;   // 30 pour le vrai jeu
 
     [Header("Texts")]
     public TMP_Text correctScoreText;
@@ -61,11 +61,9 @@ public class ScoreManager : MonoBehaviour
     public void RegisterSuccess()
     {
         correctSorts++;
-        environmentScore += 2f;
-        environmentScore = Mathf.Clamp(environmentScore, 0f, 100f);
-
         Debug.Log("Succès de tri enregistré");
         UpdateUI();
+        CheckEndConditions();
     }
 
     /* =========================
@@ -95,8 +93,6 @@ public class ScoreManager : MonoBehaviour
 
     public void RegisterEnvironmentError(int loss)
     {
-        environmentScore -= loss;
-        environmentScore = Mathf.Clamp(environmentScore, 0f, 100f);
 
         Debug.Log("Environnement - " + loss);
         UpdateUI();
@@ -108,8 +104,6 @@ public class ScoreManager : MonoBehaviour
      * ========================= */
     private void CheckEndConditions()
     {
-        if (gameOverTriggered) return;
-
         // jauge sécurité opérateur vide
         if (securityScore <= 0f)
         {
@@ -129,6 +123,7 @@ public class ScoreManager : MonoBehaviour
         // Fin de démo / mission réussie
         if (correctSorts >= correctToFinishDemo)
         {
+            Debug.Log("Condition de fin de session atteinte.");
             gameOverTriggered = true;
             GameManager.Instance.ChangeState(GameState.Bilan);
         }
@@ -150,6 +145,13 @@ public class ScoreManager : MonoBehaviour
 
         if (environmentSlider != null)
             environmentSlider.value = environmentScore;
+        
+
+    }
+
+    void Update()
+    {
+        Debug.Log(correctSorts + " correct sorts, " + errors + " errors. Security: " + securityScore + ", Environment: " + environmentScore);
     }
 
 

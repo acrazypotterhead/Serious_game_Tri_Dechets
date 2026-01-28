@@ -1362,7 +1362,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -421.1, y: 75.9}
+  m_AnchoredPosition: {x: -392.74, y: 75.9}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &76052785
@@ -2768,7 +2768,7 @@ RectTransform:
   m_Father: {fileID: 495170285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9175,7 +9175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -10630,7 +10630,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &659881806
 Canvas:
   m_ObjectHideFlags: 0
@@ -10640,8 +10640,8 @@ Canvas:
   m_GameObject: {fileID: 659881802}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 2008602630}
   m_PlaneDistance: 0.6
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -10661,19 +10661,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659881802}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 6.492}
+  m_LocalScale: {x: 0.0018287323, y: 0.0018287323, z: 0.0018287323}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1633673385}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 3.442, y: 0.73}
+  m_SizeDelta: {x: 1099, y: 836}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &668901834
 GameObject:
   m_ObjectHideFlags: 0
@@ -12033,7 +12033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -12719,7 +12719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -13108,7 +13108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -18537,7 +18537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -19282,7 +19282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -20183,7 +20183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -22301,7 +22301,7 @@ RectTransform:
   m_Father: {fileID: 1330137774}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -22894,7 +22894,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1633673385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25892,7 +25892,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -26396,7 +26396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4e88150cf21c1478e5349668b9b52e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashProbability: 1
+  splashProbability: 0.33
   splashEffectPrefab: {fileID: 7273881511451885046, guid: f47626c5621e9fa4db1cbcd8534ae812, type: 3}
   localOffset: {x: 0, y: 0, z: 0}
   splashed: 0
@@ -26909,6 +26909,7 @@ GameObject:
   - component: {fileID: 2077826474}
   - component: {fileID: 2077826475}
   - component: {fileID: 2077826476}
+  - component: {fileID: 2077826477}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -27157,6 +27158,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2077826477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077826464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af77076c7daff4c4f958faf6b14f1e82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  bilanManager: {fileID: 2077826475}
 --- !u!1 &2078791735
 GameObject:
   m_ObjectHideFlags: 0
